@@ -73,5 +73,19 @@
   "footer": {
     "text": "Erasmus+ Project: \"Our tradition... our entrepreneurship!\" ",
     "copyright": "&copy; 2024 All Rights Reserved."
+  },
+  "sidebar": {
+    "title": "Erasmus+ Guide",
+    "subTitle": "Entrepreneurship development and promotion practices",
+    "preface": "Preface",
+    "legislation": "1. Legislation",
+    "employment": "2. Employment Type",
+    "publicSect": "A. Public Sector",
+    "privateSect": "B. Private Sector",
+    "freelance": "C. Freelancing",
+    "skills": "Skill Acquisition",
+    "business": "Entrepreneurship",
+    "municipality": "Family and Municipality",
+    "footer": "Co-funded by the Erasmus+ Programme"
   }
 }

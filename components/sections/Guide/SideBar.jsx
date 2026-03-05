@@ -1,7 +1,10 @@
 // src/components/layouts/SideBar.jsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const SideBar = () => {
+  const { t } = useTranslation("guide");
+
   const handleEmploymentClick = (e, cardType) => {
     e.preventDefault();
 
@@ -43,12 +46,12 @@ const SideBar = () => {
             </svg>
           </div>
           <h1 className="font-bold text-lg text-(--color-dark-text) dark:text-white">
-            Erasmus+ Guide
+            {t("sidebar.title")}
           </h1>
         </div>
 
         <p className="text-sm text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-60">
-          Entrepreneurship development and promotion practices
+          {t("sidebar.subTitle")}
         </p>
       </div>
 
@@ -59,19 +62,21 @@ const SideBar = () => {
           className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
           <i className="fa-regular fa-comment text-sm"></i>
-          Preface
+          {t("sidebar.preface")}
         </a>
         <a
           href="#legislation"
           className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-scale-balanced text-sm"></i>1. Legislation
+          <i className="fa-solid fa-scale-balanced text-sm"></i>
+          {t("sidebar.legislation")}
         </a>
         <a
           href="#employment"
           className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-briefcase text-sm"></i>2. Employment Type
+          <i className="fa-solid fa-briefcase text-sm"></i>
+          {t("sidebar.employment")}
         </a>
         <div className="text-sm flex flex-col ml-6.5 [&_a]:hover:bg-transparent [&_a]:text-(--color-dark2-text)">
           <a
@@ -79,43 +84,43 @@ const SideBar = () => {
             onClick={(e) => handleEmploymentClick(e, "public")}
             className="cursor-pointer hover:text-(--color-primary) transition-colors"
           >
-            A. Public Sector
+            {t("sidebar.publicSect")}
           </a>
           <a
             href="#employment"
             onClick={(e) => handleEmploymentClick(e, "private")}
             className="cursor-pointer hover:text-(--color-primary) transition-colors"
           >
-            B. Private Sector
+            {t("sidebar.privateSect")}
           </a>
           <a
             href="#employment"
             onClick={(e) => handleEmploymentClick(e, "freelance")}
             className="cursor-pointer hover:text-(--color-primary) transition-colors"
           >
-            C. Freelancing
+            {t("sidebar.freelance")}
           </a>
         </div>
         <a
           href="#skills"
           className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-graduation-cap text-sm"></i>Skill
-          Acquisition
+          <i className="fa-solid fa-graduation-cap text-sm"></i>
+          {t("sidebar.skills")}
         </a>
         <a
           href="#entrepreneurship"
           className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
           <i className="fa-solid fa-rocket text-sm"></i>
-          Entrepreneurship
+          {t("sidebar.business")}
         </a>
         <a
           href="#family_municipality"
           className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-user-group text-sm"></i>Family and
-          Municipality
+          <i className="fa-solid fa-user-group text-sm"></i>
+          {t("sidebar.municipality")}
         </a>
       </div>
 
@@ -126,7 +131,7 @@ const SideBar = () => {
           </div>
 
           <h1 className="text-(--color-bg-dark) dark:text-(--color-bg-primary) text-xs max-w-40">
-            Co-funded by the Erasmus+ Programme
+            {t("sidebar.footer")}
           </h1>
         </div>
       </div>

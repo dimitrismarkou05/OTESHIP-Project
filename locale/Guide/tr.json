@@ -68,5 +68,19 @@
   "footer": {
     "text": "Erasmus+ Projesi: \"Geleneğimiz... girişimciliğimiz!\"",
     "copyright": "© 2024 Tüm Hakları Saklıdır."
+  },
+  "sidebar": {
+    "title": "Erasmus+ Rehberi",
+    "subTitle": "Girişimcilik geliştirme ve tanıtım uygulamaları",
+    "preface": "Önsöz",
+    "legislation": "1. Mevzuat",
+    "employment": "2. İstihdam Türü",
+    "publicSect": "A. Kamu Sektörü",
+    "privateSect": "B. Özel Sektör",
+    "freelance": "C. Serbest Çalışma",
+    "skills": "Beceri Edinimi",
+    "business": "Girişimcilik",
+    "municipality": "Aile ve Belediye",
+    "footer": "Erasmus+ Programı tarafından ortak finansman sağlanmıştır"
   }
 }

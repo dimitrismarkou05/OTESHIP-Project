@@ -72,5 +72,19 @@
   "footer": {
     "text": "Projekt Erasmus+: \"Nasza tradycja... nasza przedsiębiorczość!\"",
     "copyright": "© 2024 Wszelkie prawa zastrzeżone."
+  },
+  "sidebar": {
+    "title": "Przewodnik Erasmus+",
+    "subTitle": "Praktyki rozwoju i promocji przedsiębiorczości",
+    "preface": "Przedmowa",
+    "legislation": "1. Ustawodawstwo",
+    "employment": "2. Rodzaj zatrudnienia",
+    "publicSect": "A. Sektor publiczny",
+    "privateSect": "B. Sektor prywatny",
+    "freelance": "C. Wolny zawód",
+    "skills": "Nabywanie umiejętności",
+    "business": "Przedsiębiorczość",
+    "municipality": "Rodzina i Gmina",
+    "footer": "Współfinansowane przez program Erasmus+"
   }
 }
