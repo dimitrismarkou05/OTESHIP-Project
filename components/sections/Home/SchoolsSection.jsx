@@ -6,35 +6,54 @@ import SchoolCard from "../../common/SchoolCard";
 const SchoolsSection = () => {
   const { schoolCardsData } = useLanguageData();
   const { t } = useTranslation("home");
+
   return (
     <section
-      className="bg-(--color-bg-primary) dark:bg-(--color-bg-dark) lg:p-20 md:p-15 sm:p-10 p-10 transition-colors duration-200 scroll-mt-8"
+      className="bg-(--color-bg-primary) dark:bg-(--color-bg-dark) p-8 xs:p-10 md:p-15 lg:p-16 xl:p-20 transition-colors duration-200 scroll-mt-8"
       id="schools"
     >
-      <div className="flex flex-col justify-between items-center lg:gap-10 md:gap-8 sm:gap-6 gap-6">
+      <div className="flex flex-col justify-between items-center gap-6 md:gap-8 lg:gap-9 xl:gap-10">
         <div
           data-aos="fade-up"
-          className="flex flex-col justify-center items-center lg:gap-4 md:gap-2 sm:gap-1 gap-1"
+          className="flex flex-col justify-center items-center gap-1 md:gap-2 lg:gap-3 xl:gap-4"
         >
-          <h1 className="font-bold lg:text-4xl md:text-2xl sm:text-lg text-lg text-(--color-dark-text) dark:text-white">
+          <h1 className="font-bold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-(--color-dark-text) dark:text-white">
             {t("schools.title")}
           </h1>
-          <h1 className="lg:text-lg md:text-base sm:text-sm text-sm text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-3xl text-center">
+          <h1 className="text-sm md:text-base xl:text-lg text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-3xl text-center">
             {t("schools.description")}
           </h1>
         </div>
-        <div className="flex lg:flex-row md:flex-col sm:flex-col flex-col items-stretch justify-center lg:gap-8 md:gap-5 sm:gap-4 gap-4 max-w-7xl">
+
+        {/* Layout rules applied: 
+          - Default & xs (< 640px): flex-col (with max-w cap to control image bleed)
+          - sm to md: 4 col grid (Math trick centers the 3rd card)
+          - md to lg: Switches back to flex and stacks vertically (flex-col)
+          - lg and up: Expands to horizontal row (flex-row) with items-stretch
+        */}
+        <div className="flex flex-col sm:grid sm:grid-cols-4 md:flex md:flex-col lg:flex-row items-stretch justify-center gap-4 md:gap-5 lg:gap-6 xl:gap-8 max-w-7xl w-full">
           {schoolCardsData.map((school, index) => (
-            <SchoolCard
+            <div
               key={index}
-              to={school.to}
-              image={school.image}
-              title={school.title}
-              description={school.description}
-              country={school.country}
-              location={school.location}
-              aosDelay={300 + index * 150}
-            />
+              // Added lg:flex-1 so the 3 cards divide the flex-row equally
+              className={`w-full max-w-sm mx-auto sm:max-w-none flex justify-center lg:flex-1 ${
+                index === 2
+                  ? "sm:col-span-2 sm:col-start-2" // Centers the 3rd card on sm
+                  : "sm:col-span-2" // Standard 50% width on sm
+              }`}
+            >
+              <SchoolCard
+                to={school.to}
+                image={school.image}
+                title={school.title}
+                description={school.description}
+                country={school.country}
+                location={school.location}
+                aosDelay={300 + index * 150}
+                // Added h-full and w-full so the card fills the stretched wrapper
+                className="h-full w-full"
+              />
+            </div>
           ))}
         </div>
       </div>
