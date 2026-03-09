@@ -38,7 +38,7 @@ const HeroSection = () => {
             >
               {t("hero.learnMore")}
               <svg
-                className="w-3.5 h-3.5 ms-2 rtl:rotate-180 mt-0.5 ml-1.5"
+                className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-3.5 lg:h-3.5 ms-1 sm:ms-1.5 lg:ms-2 mt-0.5 transition-all duration-200"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
