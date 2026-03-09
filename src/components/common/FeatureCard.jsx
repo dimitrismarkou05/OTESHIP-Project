@@ -4,7 +4,7 @@ const FeatureCard = ({ icon, title, description, to, aosDelay, index }) => {
   const cardContent = (
     <>
       <i
-        className={`${icon} text-base md:text-lg lg:text-xl text-(--color-primary) dark:text-(--color-primary2) mb-2`}
+        className={`${icon} text-base xs:text-lg md:text-xl lg:text-2xl text-(--color-primary) dark:text-(--color-primary2)`}
       ></i>
       <h1 className="text-sm md:text-base lg:text-lg font-bold text-(--color-dark-text) dark:text-white w-full">
         {title}
@@ -21,11 +21,9 @@ const FeatureCard = ({ icon, title, description, to, aosDelay, index }) => {
     flex-col 
     justify-start 
     items-start 
-    gap-0.5 
-    xs:gap-1 
-    md:gap-1.5 
-    lg:gap-2 
-    xl:gap-3 
+    gap-1.5
+    xs:gap-2
+    md:gap-2.5
     bg-white 
     dark:bg-(--color-dark2-text) 
     drop-shadow-md 
@@ -41,7 +39,6 @@ const FeatureCard = ({ icon, title, description, to, aosDelay, index }) => {
     mx-auto
   `;
 
-  // If it's the first card (index === 0), render as <a> tag
   if (index === 0) {
     return (
       <div
@@ -57,7 +54,6 @@ const FeatureCard = ({ icon, title, description, to, aosDelay, index }) => {
     );
   }
 
-  // For all other cards, render as Link
   return (
     <div
       data-aos="fade-down"

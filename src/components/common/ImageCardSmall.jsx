@@ -26,7 +26,7 @@ const ImageCardSmall = ({
             className="w-full h-full object-cover transition-transform duration-400 ease-in-out hover:scale-105"
           />
         </Link>
-        <div className="flex flex-col justify-start items-start gap-0.5 xs:gap-1 md:gap-1.5 lg:gap-2 xl:gap-3 flex-1 p-3 xs:p-3.5 md:p-4 xl:p-5">
+        <div className="flex flex-col justify-start items-start gap-1.5 xs:gap-2 md:gap-2.5 flex-1 p-3 xs:p-3.5 md:p-4 xl:p-5">
           <h1 className="text-sm md:text-base lg:text-lg font-bold text-(--color-dark-text) dark:text-white w-full line-clamp-2">
             {title}
           </h1>
