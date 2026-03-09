@@ -22,9 +22,9 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-9 xl:gap-10 max-w-7xl w-full mx-auto items-start">
           {/* Column 1: Contact Info */}
-          <div className="flex flex-col gap-6 md:gap-8 w-full max-w-2xl mx-auto lg:mx-0">
+          <div className="flex flex-col gap-6 md:gap-8 w-full max-w-2xl mx-auto lg:mx-0 h-full">
             <h2
-              className="text-sm md:text-base lg:text-lg font-bold text-(--color-dark-text) dark:text-white"
+              className="text-base md:text-lg lg:text-xl font-bold text-(--color-dark-text) dark:text-white"
               data-aos="fade-right"
               data-aos-delay="150"
               data-aos-anchor="#first-school-trigger"
@@ -33,7 +33,7 @@ const ContactSection = () => {
               {t("contact.contactInfo")}
             </h2>
 
-            <div className="flex flex-col gap-6 md:gap-8">
+            <div className="flex flex-col gap-6 md:gap-8 h-full justify-evenly">
               {contactSectionData.map((school, index) => (
                 <div
                   key={index}
