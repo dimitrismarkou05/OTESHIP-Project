@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useLanguageData } from "../../../hooks/useLanguageData";
 import SchoolCard from "../../common/SchoolCard";
+import SectionHeader from "../../common/SectionHeader";
 
 const SchoolsSection = () => {
   const { schoolCardsData } = useLanguageData();
@@ -13,17 +14,10 @@ const SchoolsSection = () => {
       id="schools"
     >
       <div className="flex flex-col justify-between items-center gap-6 md:gap-8 lg:gap-9 xl:gap-10">
-        <div
-          data-aos="fade-up"
-          className="flex flex-col justify-center items-center gap-1 md:gap-2 lg:gap-3 xl:gap-4"
-        >
-          <h1 className="font-bold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-(--color-dark-text) dark:text-white">
-            {t("schools.title")}
-          </h1>
-          <h1 className="text-sm md:text-base xl:text-lg text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-3xl text-center">
-            {t("schools.description")}
-          </h1>
-        </div>
+        <SectionHeader
+          title={t("schools.title")}
+          description={t("schools.description")}
+        />
 
         {/* Added md:max-w-[80%] and lg:max-w-7xl here */}
         <div className="flex flex-col sm:grid sm:grid-cols-4 md:flex md:flex-col lg:flex-row items-stretch justify-center gap-4 md:gap-5 lg:gap-6 xl:gap-8 w-full max-w-7xl md:max-w-[80%] lg:max-w-7xl">
