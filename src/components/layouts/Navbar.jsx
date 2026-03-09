@@ -230,7 +230,7 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       <div
         ref={mobileMenuRef}
-        className={`absolute top-full left-0 w-full bg-white dark:bg-(--color-bg-dark) shadow-md border-t border-gray-200 dark:border-(--color-divider) transition-all duration-300 ease-in-out xs:hidden overflow-hidden ${
+        className={`absolute top-full left-0 w-full bg-white dark:bg-(--color-bg-dark) shadow-md border-t border-gray-200 dark:border-(--color-divider) [transition:all_400ms,background-color_200ms,color_200ms,border-color_200ms] ease-in-out xs:hidden overflow-hidden ${
           isMobileMenuOpen
             ? "max-h-125 opacity-100 py-4"
             : "max-h-0 opacity-0 py-0"
@@ -238,7 +238,7 @@ export default function Navbar() {
       >
         <div className="flex flex-col px-6 space-y-6">
           {/* Top: Theme & Language */}
-          <div className="flex flex-row justify-between items-center border-b border-gray-200 dark:border-(--color-divider) pb-4">
+          <div className="flex flex-row justify-between items-center border-b border-gray-200 dark:border-(--color-divider) pb-4 transition-colors duration-200">
             {/* Added variant prop here! */}
             <ThemeToggle variant="menu" />
 
