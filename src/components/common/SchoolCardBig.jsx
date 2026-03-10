@@ -15,7 +15,7 @@ const SchoolCardBig = ({
   const { t } = useTranslation("about");
   return (
     <div
-      className={`flex flex-col md:flex-row items-stretch justify-between w-full flex-1 gap-5 md:gap-6 lg:gap-7 xl:gap-8 sm:max-w-lg mx-none sm:mx-auto md:mx-none md:max-w-none ${
+      className={`flex flex-col md:flex-row items-stretch justify-between w-full flex-1 gap-5 md:gap-6 lg:gap-7 xl:gap-8 sm:max-w-lg mx-0 sm:mx-auto md:mx-0 md:max-w-none ${
         imagePosition === "right" ? "md:flex-row-reverse" : ""
       }`}
       data-aos={imagePosition === "right" ? "fade-left" : "fade-right"}

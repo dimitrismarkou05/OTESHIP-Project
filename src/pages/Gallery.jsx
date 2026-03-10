@@ -87,7 +87,7 @@ const Gallery = () => {
       <div className="bg-(--color-bg-primary) w-full">
         <div className="w-full p-16">
           <div className="max-w-7xl mx-auto">
-            <div className="flex justify-center items-center min-h-[400px]">
+            <div className="flex justify-center items-center min-h-100">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
             </div>
           </div>

@@ -51,7 +51,7 @@ export default function Index() {
         <ScrollToTopButton />
         <AccessibilityMenu /> {/* Add this */}
         {/* Wrapper that creates the centered region */}
-        <div className="max-w-7xl mx-auto w-full relative flex-1">
+        <div className="overflow-x-hidden max-w-7xl mx-auto w-full relative flex-1">
           {/* Two-column layout within centered region */}
           <div className="flex">
             {/* Sidebar container - takes up space in flow */}
@@ -82,7 +82,7 @@ export default function Index() {
       <Navbar />
       <ScrollToTopButton />
       <AccessibilityMenu /> {/* Add this */}
-      <main className="grow flex">
+      <main className="grow flex overflow-x-hidden">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

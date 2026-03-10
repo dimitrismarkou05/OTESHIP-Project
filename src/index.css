@@ -49,6 +49,7 @@
   body {
     font-family: var(--font-sans);
     overflow-x: hidden;
+    @apply bg-(--color-dark-text) dark:bg-black transition-colors duration-200;
   }
 }
 
@@ -81,10 +82,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-(--color-dark-text) dark:bg-black transition-colors duration-200;
 }
 
 .font-size-large {
