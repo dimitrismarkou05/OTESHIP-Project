@@ -250,7 +250,7 @@ export default function Navbar() {
                     selectLanguage(language);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`flex items-center justify-center w-8 h-8 rounded transition-all ${
+                  className={`cursor-pointer flex items-center justify-center w-8 h-8 rounded transition-all ${
                     currentLanguage.code === language.code
                       ? "bg-white dark:bg-black/40 shadow-sm"
                       : "hover:bg-gray-200 dark:hover:bg-black/20 opacity-70 hover:opacity-100"
