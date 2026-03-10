@@ -34,7 +34,7 @@ const OpportunitiesSection = () => {
                 title={card.title}
                 description={card.description}
                 aosDelay={300 + index * 150}
-                className="w-full max-w-sm h-full"
+                className="w-full h-full"
               />
             </div>
           ))}
