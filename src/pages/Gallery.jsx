@@ -274,11 +274,12 @@ const Gallery = () => {
           </button>
 
           <button
-            className="hidden md:block absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 text-white/90 hover:text-white bg-black/40 hover:bg-black/60 transition-colors z-60 p-2 rounded-full cursor-pointer"
+            className="hidden md:flex w-12 h-12 items-center justify-center absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 text-white/90 hover:text-white bg-black/40 hover:bg-black/60 transition-colors z-60 rounded-full cursor-pointer"
             onClick={showPrev}
             aria-label="Previous image"
           >
             <svg
+              className="-translate-x-px"
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
@@ -294,11 +295,12 @@ const Gallery = () => {
           </button>
 
           <button
-            className="hidden md:block absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 text-white/90 hover:text-white bg-black/40 hover:bg-black/60 transition-colors z-60 p-2 rounded-full cursor-pointer"
+            className="hidden md:flex w-12 h-12 items-center justify-center absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 text-white/90 hover:text-white bg-black/40 hover:bg-black/60 transition-colors z-60 rounded-full cursor-pointer"
             onClick={showNext}
             aria-label="Next image"
           >
             <svg
+              className="translate-x-px"
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"
