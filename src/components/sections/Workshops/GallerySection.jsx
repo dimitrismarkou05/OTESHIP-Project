@@ -26,7 +26,7 @@ const CarouselCard = ({ src, index, isVisible, style }) => {
         data-aos-delay={300 + index * 150} // v1 delays restored
       >
         <div
-          className={`absolute inset-0 bg-gray-300 dark:bg-gray-700 animate-pulse transition-opacity duration-500 ease-in-out ${
+          className={`absolute inset-0 bg-gray-300 dark:bg-gray-700 animate-pulse transition-opacity duration-400 ease-in-out ${
             isLoaded ? "opacity-0" : "opacity-100"
           }`}
         />

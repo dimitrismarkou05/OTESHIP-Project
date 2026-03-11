@@ -14,7 +14,7 @@ const GalleryImage = ({ src, index, spanClass, responsiveClasses }) => {
       data-aos="fade-down"
       data-aos-delay={300 + index * 50}
       data-aos-offset="0"
-      className={`relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-gray-200 dark:bg-gray-800 ${spanClass} ${responsiveClasses}`}
+      className={`relative rounded-md overflow-hidden shadow-md cursor-pointer bg-gray-200 dark:bg-gray-800 ${spanClass} ${responsiveClasses}`}
       style={{
         minHeight: "200px",
         // Tells the browser to skip layout/painting if this is off-screen
@@ -32,7 +32,7 @@ const GalleryImage = ({ src, index, spanClass, responsiveClasses }) => {
           alt={`Gallery image ${index + 1}`}
           loading="lazy"
           decoding="async" /* <--- THIS IS THE MAGIC BULLET FOR THE FREEZES */
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-400 ease-in-out hover:scale-105 ${
             isLoaded ? "opacity-100" : "opacity-0"
           }`}
           // Adding a fetchpriority hint for above-the-fold vs below-the-fold
