@@ -20,14 +20,17 @@ const GalleryImage = ({ src, index, onClick, inCarousel = false }) => {
       onClick={onClick}
       className={`relative rounded-md overflow-hidden shadow-md cursor-pointer bg-gray-200 dark:bg-gray-800 group ${
         inCarousel
-          ? "w-full h-full"
-          : "w-full xs:w-[calc((100%-0.5rem)/2)] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3rem)/4)]"
+          ? "w-full h-50 xs:h-65" // Taller responsive heights for the carousel
+          : "w-full h-50 xs:w-[calc((100%-0.5rem)/2)] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3rem)/4)]"
       }`}
-      style={{
-        height: "200px",
-        contentVisibility: "auto",
-        containIntrinsicSize: "200px",
-      }}
+      style={
+        inCarousel
+          ? {} // Strip the hardcoded constraints so the tailwind classes can take over
+          : {
+              contentVisibility: "auto",
+              containIntrinsicSize: "200px",
+            }
+      }
     >
       {!isLoaded && !hasError && (
         <div className="absolute inset-0 bg-gray-300 dark:bg-gray-700 animate-pulse" />
