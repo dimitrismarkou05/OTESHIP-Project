@@ -3,13 +3,7 @@ import { loadWorkshopImages } from "../data/Workshops/workshopImages";
 import { useTranslation } from "react-i18next";
 import SectionHeader from "../components/common/SectionHeader";
 
-const GalleryImage = ({
-  src,
-  index,
-  spanClass,
-  responsiveClasses,
-  onClick,
-}) => {
+const GalleryImage = ({ src, index, onClick }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -20,10 +14,10 @@ const GalleryImage = ({
       data-aos-delay={300 + index * 50}
       data-aos-offset="0"
       onClick={onClick}
-      // REMOVED touch-pan-y so your browser's back-swipe navigation works again!
-      className={`relative rounded-md overflow-hidden shadow-md cursor-pointer bg-gray-200 dark:bg-gray-800 ${spanClass} ${responsiveClasses} group`}
+      // Widths are calculated to account for the gaps (gap-2 = 0.5rem, gap-4 = 1rem)
+      className="relative rounded-md overflow-hidden shadow-md cursor-pointer bg-gray-200 dark:bg-gray-800 group w-full xs:w-[calc(50%-0.25rem)] md:w-[calc(33.333%-0.666rem)] lg:w-[calc(25%-0.75rem)]"
       style={{
-        minHeight: "200px",
+        height: "200px", // Changed to fixed height to ensure all images are exactly the same size
         contentVisibility: "auto",
         containIntrinsicSize: "200px",
       }}
@@ -77,14 +71,12 @@ const Gallery = () => {
     fetchImages();
   }, []);
 
-  // ADDED: Lock the underlying body scroll when the lightbox is open
   useEffect(() => {
     if (selectedIndex !== null) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = "";
     };
@@ -158,12 +150,6 @@ const Gallery = () => {
     }
   };
 
-  const getSpanClass = (index) => {
-    if (index === 0) return "col-span-2 row-span-2";
-    if (index === 4) return "col-span-1 row-span-2";
-    return "col-span-1 row-span-1";
-  };
-
   return (
     <div className="bg-(--color-bg-primary) w-full relative">
       <style>{`
@@ -189,35 +175,27 @@ const Gallery = () => {
           <div className="flex flex-col gap-2 md:gap-3 lg:gap-4 xl:gap-6 justify-evenly items-center flex-1 w-full">
             <SectionHeader
               title={t("gallery.title")}
-              description={"Test, i have images i have bitches also ok?"}
+              description={t("gallery.description")}
             />
 
             <div className="w-full">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[200px] gap-2 md:gap-4 grid-flow-dense">
-                {displayedImages.map((image, index) => {
-                  const spanClass = getSpanClass(index);
-                  const responsiveClasses = `
-                    ${index === 8 ? "lg:col-span-2" : ""} 
-                    ${index === 9 ? "md:col-span-2 lg:col-span-2" : ""}
-                  `;
-
-                  return (
-                    <GalleryImage
-                      key={index}
-                      src={image}
-                      index={index}
-                      spanClass={spanClass}
-                      responsiveClasses={responsiveClasses}
-                      onClick={() => openLightbox(index)}
-                    />
-                  );
-                })}
+              {/* Swapped Grid for Flexbox to handle the centered last row requirement */}
+              <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+                {displayedImages.map((image, index) => (
+                  <GalleryImage
+                    key={index}
+                    src={image}
+                    index={index}
+                    onClick={() => openLightbox(index)}
+                  />
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Lightbox code remains completely unchanged below this point */}
       {selectedIndex !== null && (
         <div
           className="fixed inset-0 z-5000 flex items-center justify-center bg-black/95 backdrop-blur-sm transition-opacity touch-none"
