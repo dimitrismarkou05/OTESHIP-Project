@@ -136,6 +136,12 @@ export default function Navbar() {
           {t("navbar.ceramics")}
         </Link>
         <Link
+          to="/gallery"
+          className={`hover-anim ${isActive("/gallery") ? "active" : ""}`}
+        >
+          {t("navbar.gallery")}
+        </Link>
+        <Link
           to="/contact"
           className={`hover-anim ${isActive("/contact") ? "active" : ""}`}
         >
@@ -305,6 +311,12 @@ export default function Navbar() {
               className={`hover-anim inline-block w-fit mx-auto ${isActive("/ceramics") ? "active" : ""}`}
             >
               {t("navbar.ceramics")}
+            </Link>
+            <Link
+              to="/gallery"
+              className={`hover-anim ${isActive("/gallery") ? "active" : ""}`}
+            >
+              {t("navbar.gallery")}
             </Link>
             <Link
               to="/contact"
