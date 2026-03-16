@@ -1,6 +1,14 @@
 import { Link, useNavigate } from "react-router";
 
-const SchoolCard = ({ to, image, title, description, country, location }) => {
+const SchoolCard = ({
+  to,
+  image,
+  title,
+  description,
+  country,
+  location,
+  aosDelay,
+}) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
@@ -12,7 +20,11 @@ const SchoolCard = ({ to, image, title, description, country, location }) => {
   };
 
   return (
-    <div className="flex-1 min-w-0">
+    <div
+      className="flex-1 min-w-0"
+      data-aos="fade-down"
+      data-aos-delay={aosDelay}
+    >
       <div
         onClick={handleCardClick}
         className="flex flex-col md:flex-row lg:flex-col bg-white dark:bg-(--color-dark2-text) drop-shadow-md rounded-md min-w-0 flex-1 [transition:all_200ms,translate_300ms] hover:shadow-xl/4 hover:-translate-y-1 h-full cursor-pointer"
