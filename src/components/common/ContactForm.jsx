@@ -17,10 +17,14 @@ const ContactForm = () => {
       <form className="flex flex-col gap-2.5 xs:gap-3.5 md:gap-4.5">
         {/* Input Group: Name */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs md:text-sm font-medium text-(--color-bg-dark) dark:text-(--color-bg-primary)">
+          <label
+            htmlFor="name"
+            className="text-xs md:text-sm font-medium text-(--color-bg-dark) dark:text-(--color-bg-primary)"
+          >
             {t("contact.name")}
           </label>
           <input
+            id="name"
             type="text"
             required
             className="text-xs md:text-sm lg:text-base text-(--color-dark-text) dark:text-white bg-transparent border border-gray-300 dark:border-gray-500 rounded-md px-3.5 py-2 xs:py-2.5 md:py-3 focus:outline-none focus:ring-1 focus:ring-(--color-primary) transition-all"
@@ -29,10 +33,14 @@ const ContactForm = () => {
 
         {/* Input Group: Email */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs md:text-sm font-medium text-(--color-bg-dark) dark:text-(--color-bg-primary)">
+          <label
+            htmlFor="email"
+            className="text-xs md:text-sm font-medium text-(--color-bg-dark) dark:text-(--color-bg-primary)"
+          >
             {t("contact.email")}
           </label>
           <input
+            id="email"
             type="email"
             required
             className="text-xs md:text-sm lg:text-base text-(--color-dark-text) dark:text-white bg-transparent border border-gray-300 dark:border-gray-500 rounded-md px-3.5 py-2 xs:py-2.5 md:py-3 focus:outline-none focus:ring-1 focus:ring-(--color-primary) transition-all"
@@ -41,10 +49,14 @@ const ContactForm = () => {
 
         {/* Input Group: Phone */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs md:text-sm font-medium text-(--color-bg-dark) dark:text-(--color-bg-primary)">
+          <label
+            htmlFor="phone"
+            className="text-xs md:text-sm font-medium text-(--color-bg-dark) dark:text-(--color-bg-primary)"
+          >
             {t("contact.phone")}
           </label>
           <input
+            id="phone"
             type="tel"
             pattern="[0-9+() -]*"
             required
@@ -54,10 +66,14 @@ const ContactForm = () => {
 
         {/* Input Group: Message */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs md:text-sm font-medium text-(--color-bg-dark) dark:text-(--color-bg-primary)">
+          <label
+            htmlFor="message"
+            className="text-xs md:text-sm font-medium text-(--color-bg-dark) dark:text-(--color-bg-primary)"
+          >
             {t("contact.message")}
           </label>
           <textarea
+            id="message"
             rows="3"
             required
             className="text-xs md:text-sm lg:text-base text-(--color-dark-text) dark:text-white bg-transparent border border-gray-300 dark:border-gray-500 rounded-md px-3.5 py-2 xs:py-2.5 md:py-3 resize-none focus:outline-none focus:ring-1 focus:ring-(--color-primary) transition-all"
