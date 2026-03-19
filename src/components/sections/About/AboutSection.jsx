@@ -17,11 +17,9 @@ const AboutSection = () => {
         setRandomImage(images[0].src);
       }
     };
-
     fetchRandomImage();
   }, []);
 
-  // Reset loading state if the image source changes
   useEffect(() => {
     if (randomImage) {
       setIsLoaded(false);
@@ -32,6 +30,7 @@ const AboutSection = () => {
     <section className="bg-(--color-bg-primary) dark:bg-(--color-bg-dark) p-8 xs:p-10 md:p-15 lg:p-16 xl:p-20 transition-colors duration-200">
       <div className="flex flex-col justify-between items-center gap-6 md:gap-8 lg:gap-9 xl:gap-10">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-5 lg:gap-6 xl:gap-8 w-full max-w-7xl">
+          {/* Left Side: Text Content */}
           <div className="flex flex-col gap-4 md:gap-6 lg:gap-7 xl:gap-8 justify-evenly flex-1 w-full">
             <h1 className="font-bold text-lg md:text-2xl lg:text-3xl xl:text-4xl text-(--color-dark-text) dark:text-white">
               {t("about.title")}
@@ -46,24 +45,25 @@ const AboutSection = () => {
             ))}
           </div>
 
+          {/* Right Side: Image with Responsive Aspect Ratios */}
           <Link
             to="/ceramics"
-            className="relative rounded-md w-full max-w-lg md:max-w-xl mx-auto lg:mx-0 lg:max-w-100 block overflow-hidden shrink-0 min-h-75 sm:min-h-100 bg-transparent"
+            className="relative rounded-md w-full max-w-lg md:max-w-xl mx-auto lg:mx-0 lg:max-w-100 block overflow-hidden shrink-0 aspect-3/2 xs:aspect-video lg:aspect-auto bg-gray-200 dark:bg-gray-800"
           >
-            {/* 1. Structural fix: If not loaded, render the pulsing skeleton */}
-            {!isLoaded && (
-              <div className="absolute inset-0 bg-gray-300 dark:bg-gray-700 animate-pulse z-1" />
-            )}
+            {/* Skeleton Overlay */}
+            <div
+              className={`absolute inset-0 bg-gray-300 dark:bg-gray-700 animate-pulse transition-opacity duration-400 ${
+                isLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
+            />
 
             {randomImage && (
               <img
                 src={randomImage}
                 alt="workshop"
                 onLoad={() => setIsLoaded(true)}
-                /* 2. Style fix: Removed opacity transition on image for immediate appearance.
-                   The skeleton unmounting provides the transition effect. */
-                className={`absolute inset-0 w-full h-full object-cover rounded-md transition-transform duration-400 ease-in-out hover:scale-105 ${
-                  isLoaded ? "visible" : "invisible"
+                className={`absolute inset-0 w-full h-full object-cover rounded-md transition-all duration-400 ease-in-out hover:scale-105 ${
+                  isLoaded ? "opacity-100" : "opacity-0"
                 }`}
               />
             )}

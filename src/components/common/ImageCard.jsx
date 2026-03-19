@@ -14,12 +14,12 @@ const ImageCard = ({ title, description, image }) => {
   return (
     <div className="flex-1">
       <div className="transition-colors duration-200 flex flex-col p-3 xs:p-3.5 md:p-4 xl:p-5 bg-(--color-bg-primary) dark:bg-(--color-bg-dark) rounded-md gap-3.5 md:gap-4 lg:gap-4.5 drop-shadow-sm flex-1 h-full">
-        {/* 1. Added 'relative' and a 'min-h-[240px]' to prevent layout collapse.
-          2. Added the base gray background so it acts as a solid placeholder.
+        {/* Replaced min-h-72 with aspect ratios. This prevents layout collapse 
+          while loading, but allows the image to scale down cleanly on small screens. 
         */}
         <Link
           to="/ceramics"
-          className="relative block w-full rounded-md overflow-hidden min-h-72 max-h-72 flex-1 bg-gray-200 dark:bg-gray-800"
+          className="relative block w-full rounded-md overflow-hidden aspect-4/3 xs:aspect-video max-h-72 bg-gray-200 dark:bg-gray-800"
         >
           {/* Pulsing Skeleton Overlay */}
           <div
