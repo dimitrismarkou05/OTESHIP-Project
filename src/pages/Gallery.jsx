@@ -8,6 +8,8 @@ import { useTranslation } from "react-i18next";
 import SectionHeader from "../components/common/SectionHeader";
 import Carousel from "../components/common/Carousel";
 
+const INITIAL_VISIBLE_COUNT = 24; // 24 is divisible by 2, 3, and 4 (perfect for your grid cols)
+
 const GalleryImage = ({ src, index, onClick, inCarousel = false }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -56,6 +58,19 @@ const GalleryImage = ({ src, index, onClick, inCarousel = false }) => {
   );
 };
 
+// Reusable "View More" button using your requested styling
+const ShowMoreButton = ({ onClick, text }) => (
+  <div className="flex justify-center w-full mt-6 md:mt-8">
+    <button
+      onClick={onClick}
+      className="text-(--color-primary) text-xs md:text-sm font-semibold no-underline whitespace-nowrap inline-flex items-center justify-center hover-anim cursor-pointer"
+      style={{ "--hover-color": "var(--color-primary)" }}
+    >
+      {text}
+    </button>
+  </div>
+);
+
 const Gallery = () => {
   const { t } = useTranslation("gallery");
 
@@ -66,6 +81,15 @@ const Gallery = () => {
     tr: [],
   });
   const [exhibitionImages, setExhibitionImages] = useState([]);
+
+  // State to track how many images are visible per section
+  const [visibleCounts, setVisibleCounts] = useState({
+    workshops: INITIAL_VISIBLE_COUNT,
+    gr: INITIAL_VISIBLE_COUNT,
+    pl: INITIAL_VISIBLE_COUNT,
+    tr: INITIAL_VISIBLE_COUNT,
+    exhibitions: INITIAL_VISIBLE_COUNT,
+  });
 
   const [activeImages, setActiveImages] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -86,7 +110,6 @@ const Gallery = () => {
   }));
 
   useEffect(() => {
-    // 🚀 NO ASYNC/AWAIT: Instantly grab the pre-resolved strings
     const fetchedWorkshops = loadWorkshopImages();
     setWorkshopImages(fetchedWorkshops.map((img) => img.src));
 
@@ -207,6 +230,14 @@ const Gallery = () => {
     else if (isRightSwipe) showPrev();
   };
 
+  // Handler to load more images for a specific section
+  const handleShowMore = (section) => {
+    setVisibleCounts((prev) => ({
+      ...prev,
+      [section]: prev[section] + INITIAL_VISIBLE_COUNT,
+    }));
+  };
+
   return (
     <div className="bg-(--color-bg-primary) dark:bg-(--color-dark-text) w-full relative">
       <style>{`
@@ -229,7 +260,6 @@ const Gallery = () => {
 
       <div className="w-full p-6 xs:p-8 md:p-12 lg:p-16 xl:p-20">
         <div className="max-w-7xl mx-auto">
-          {/* Main flex container handling the gaps between major sections */}
           <div className="flex flex-col gap-12 md:gap-16 justify-evenly items-center flex-1 w-full">
             {/* 1. Workshops Section */}
             <div className="w-full">
@@ -242,19 +272,22 @@ const Gallery = () => {
                 id="workshop-grid"
                 className="hidden md:flex flex-wrap justify-center gap-2 md:gap-4 mt-4 md:mt-6 w-full"
               >
-                {workshopImages.map((image, index) => (
-                  <GalleryImage
-                    key={`grid-workshop-${index}`}
-                    src={image}
-                    index={index}
-                    onClick={() => openLightbox(index, workshopImages)}
-                  />
-                ))}
+                {workshopImages
+                  .slice(0, visibleCounts.workshops)
+                  .map((image, index) => (
+                    <GalleryImage
+                      key={`grid-workshop-${index}`}
+                      src={image}
+                      index={index}
+                      // We pass the full array to lightbox so users can still swipe through unrendered images
+                      onClick={() => openLightbox(index, workshopImages)}
+                    />
+                  ))}
               </div>
 
               <div className="block md:hidden mt-4 md:mt-6 w-full">
                 <Carousel
-                  items={workshopImages}
+                  items={workshopImages.slice(0, visibleCounts.workshops)}
                   renderItem={(image, index) => (
                     <GalleryImage
                       src={image}
@@ -265,6 +298,14 @@ const Gallery = () => {
                   )}
                 />
               </div>
+
+              {/* Show More Button */}
+              {workshopImages.length > visibleCounts.workshops && (
+                <ShowMoreButton
+                  onClick={() => handleShowMore("workshops")}
+                  text={t("gallery.viewMore")}
+                />
+              )}
             </div>
 
             {/* 2. Products Section */}
@@ -281,6 +322,11 @@ const Gallery = () => {
                   if (!imagesForCountry || imagesForCountry.length === 0)
                     return null;
 
+                  const visibleImages = imagesForCountry.slice(
+                    0,
+                    visibleCounts[country.code],
+                  );
+
                   return (
                     <div key={country.code} className="w-full">
                       <div className="[&>div]:items-start!">
@@ -294,7 +340,7 @@ const Gallery = () => {
                         id={`product-grid-${country.code}`}
                         className="hidden md:flex flex-wrap justify-center gap-2 md:gap-4 mt-2 w-full"
                       >
-                        {imagesForCountry.map((image, index) => (
+                        {visibleImages.map((image, index) => (
                           <GalleryImage
                             key={`grid-${country.code}-${index}`}
                             src={image}
@@ -308,7 +354,7 @@ const Gallery = () => {
 
                       <div className="block md:hidden mt-4 w-full">
                         <Carousel
-                          items={imagesForCountry}
+                          items={visibleImages}
                           renderItem={(image, index) => (
                             <GalleryImage
                               src={image}
@@ -321,6 +367,15 @@ const Gallery = () => {
                           )}
                         />
                       </div>
+
+                      {/* Show More Button */}
+                      {imagesForCountry.length >
+                        visibleCounts[country.code] && (
+                        <ShowMoreButton
+                          onClick={() => handleShowMore(country.code)}
+                          text={t("gallery.viewMore")}
+                        />
+                      )}
                     </div>
                   );
                 })}
@@ -339,19 +394,21 @@ const Gallery = () => {
                   id="exhibition-grid"
                   className="hidden md:flex flex-wrap justify-center gap-2 md:gap-4 mt-4 md:mt-6 w-full"
                 >
-                  {exhibitionImages.map((image, index) => (
-                    <GalleryImage
-                      key={`grid-exhibition-${index}`}
-                      src={image}
-                      index={index}
-                      onClick={() => openLightbox(index, exhibitionImages)}
-                    />
-                  ))}
+                  {exhibitionImages
+                    .slice(0, visibleCounts.exhibitions)
+                    .map((image, index) => (
+                      <GalleryImage
+                        key={`grid-exhibition-${index}`}
+                        src={image}
+                        index={index}
+                        onClick={() => openLightbox(index, exhibitionImages)}
+                      />
+                    ))}
                 </div>
 
                 <div className="block md:hidden mt-4 md:mt-6 w-full">
                   <Carousel
-                    items={exhibitionImages}
+                    items={exhibitionImages.slice(0, visibleCounts.exhibitions)}
                     renderItem={(image, index) => (
                       <GalleryImage
                         src={image}
@@ -362,12 +419,21 @@ const Gallery = () => {
                     )}
                   />
                 </div>
+
+                {/* Show More Button */}
+                {exhibitionImages.length > visibleCounts.exhibitions && (
+                  <ShowMoreButton
+                    onClick={() => handleShowMore("exhibitions")}
+                    text={t("gallery.viewMore")}
+                  />
+                )}
               </div>
             )}
           </div>
         </div>
       </div>
 
+      {/* Lightbox JSX remains completely unchanged */}
       {selectedIndex !== null && activeImages.length > 0 && (
         <div
           className="fixed inset-0 z-3 flex items-center justify-center bg-black/95 backdrop-blur-sm transition-opacity touch-none"
