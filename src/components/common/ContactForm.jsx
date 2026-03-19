@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
@@ -7,21 +7,27 @@ const ContactForm = () => {
   const form = useRef();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+  const [showToast, setShowToast] = useState(false);
+  const [toastType, setToastType] = useState("success");
+
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => setShowToast(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // Honeypot Check
     if (e.target.elements.botcheck.value) {
-      setSubmitStatus("success");
+      setToastType("success");
+      setShowToast(true);
       form.current.reset();
-      setTimeout(() => setSubmitStatus(null), 5000);
       return;
     }
 
     setIsSubmitting(true);
-    setSubmitStatus(null);
 
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -34,21 +40,21 @@ const ContactForm = () => {
       .then(
         () => {
           setIsSubmitting(false);
-          setSubmitStatus("success");
+          setToastType("success");
+          setShowToast(true);
           form.current.reset();
-          setTimeout(() => setSubmitStatus(null), 5000);
         },
         (error) => {
           setIsSubmitting(false);
-          setSubmitStatus("error");
+          setToastType("error");
+          setShowToast(true);
           console.error("EmailJS Error:", error.text);
-          setTimeout(() => setSubmitStatus(null), 5000);
         },
       );
   };
 
   return (
-    <div className="bg-white dark:bg-(--color-dark2-text) rounded-md p-3 xs:p-3.5 md:p-5 shadow-md transition-colors duration-200 w-full">
+    <div className="bg-white dark:bg-(--color-dark2-text) rounded-md p-3 xs:p-3.5 md:p-5 shadow-md transition-colors duration-200 w-full relative">
       <h2 className="text-sm md:text-base lg:text-lg font-bold text-(--color-dark-text) dark:text-white mb-3">
         {t("contact.sendMessage")}
       </h2>
@@ -67,7 +73,6 @@ const ContactForm = () => {
           autoComplete="off"
         />
 
-        {/* Input Group: Name */}
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="user_name"
@@ -88,7 +93,6 @@ const ContactForm = () => {
           />
         </div>
 
-        {/* Input Group: Email */}
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="user_email"
@@ -102,15 +106,13 @@ const ContactForm = () => {
             type="email"
             required
             pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
-            title={t("contact.invalidFormat")}
             onInvalid={(e) => {
               if (e.target.validity.valueMissing) {
                 e.target.setCustomValidity(t("contact.requiredField"));
-              } else if (
-                e.target.validity.patternMismatch ||
-                e.target.validity.typeMismatch
-              ) {
-                e.target.setCustomValidity(t("contact.invalidEmail"));
+              } else {
+                e.target.setCustomValidity(
+                  `${t("contact.invalidFormat")}\n${t("contact.invalidEmail")}`,
+                );
               }
             }}
             onInput={(e) => e.target.setCustomValidity("")}
@@ -118,7 +120,6 @@ const ContactForm = () => {
           />
         </div>
 
-        {/* Input Group: Phone */}
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="user_phone"
@@ -143,7 +144,6 @@ const ContactForm = () => {
           />
         </div>
 
-        {/* Input Group: Message */}
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="message"
@@ -164,35 +164,53 @@ const ContactForm = () => {
           ></textarea>
         </div>
 
-        {/* Status Message UI */}
-        {submitStatus && (
-          <div
-            className={`text-xs md:text-sm font-medium p-3 rounded-md border ${
-              submitStatus === "success"
-                ? "bg-green-50 border-green-200 text-green-700 dark:bg-green-900/30 dark:border-green-800 dark:text-green-400"
-                : "bg-red-50 border-red-200 text-red-700 dark:bg-red-900/30 dark:border-red-800 dark:text-red-400"
-            }`}
-          >
-            {submitStatus === "success"
-              ? t("contact.successMessage")
-              : t("contact.errorMessage")}
-          </div>
-        )}
-
-        {/* Button */}
         <button
           aria-label="Submit"
           type="submit"
           disabled={isSubmitting}
           className={`w-full mt-2 font-bold rounded-md transition-all duration-300 whitespace-nowrap text-center text-xs sm:text-sm lg:text-base py-2 xs:py-2.5 px-3.5 xs:px-4 sm:px-4.5 md:px-5 lg:px-5.5 xl:px-6 text-white ${
             isSubmitting
-              ? "bg-gray-400 dark:bg-gray-600 cursor-not-allowed"
+              ? "bg-gray-400 cursor-not-allowed"
               : "cursor-pointer bg-(--color-primary) hover:bg-(--color-primary-hover) dark:bg-(--color-primary2)"
           }`}
         >
           {isSubmitting ? t("contact.sending") : t("contact.sendButton")}
         </button>
       </form>
+
+      {/* --- TOAST NOTIFICATION (LEFT ALIGNED) --- */}
+      <div
+        className={`fixed bottom-10 left-0 right-0 sm:right-auto sm:left-5 sm:bottom-5 z-9999 transition-all duration-500 transform px-4 sm:px-0 ${
+          showToast
+            ? "translate-x-0 opacity-100"
+            : "-translate-x-full opacity-0"
+        }`}
+      >
+        <div
+          className={`flex items-center justify-between sm:justify-start gap-3 px-5 py-4 rounded-lg shadow-2xl border-l-4 w-full sm:w-max min-w-70 ${
+            toastType === "success"
+              ? "bg-white dark:bg-(--color-dark-text) border-green-500 text-gray-800 dark:text-white"
+              : "bg-white dark:bg-(--color-dark-text) border-red-500 text-gray-800 dark:text-white"
+          }`}
+        >
+          <div className="flex items-center gap-3">
+            <i
+              className={`fa-solid ${toastType === "success" ? "fa-circle-check text-green-500" : "fa-circle-xmark text-red-500"} text-xl`}
+            ></i>
+            <span className="text-sm md:text-base font-semibold">
+              {toastType === "success"
+                ? t("contact.successMessage")
+                : t("contact.errorMessage")}
+            </span>
+          </div>
+          <button
+            onClick={() => setShowToast(false)}
+            className="ml-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+          >
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
