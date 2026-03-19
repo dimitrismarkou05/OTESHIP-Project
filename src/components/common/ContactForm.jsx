@@ -189,8 +189,8 @@ const ContactForm = () => {
         <div
           className={`flex items-center justify-between sm:justify-start gap-3 px-5 py-4 rounded-lg shadow-2xl border-l-4 w-full sm:w-max min-w-70 ${
             toastType === "success"
-              ? "bg-white dark:bg-(--color-dark-text) border-green-500 text-gray-800 dark:text-white"
-              : "bg-white dark:bg-(--color-dark-text) border-red-500 text-gray-800 dark:text-white"
+              ? "bg-white dark:bg-(--color-dark2-text) border-green-500 text-gray-800 dark:text-white"
+              : "bg-white dark:bg-(--color-dark2-text) border-red-500 text-gray-800 dark:text-white"
           }`}
         >
           <div className="flex items-center gap-3">
