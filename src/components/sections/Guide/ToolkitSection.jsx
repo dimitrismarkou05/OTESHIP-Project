@@ -44,7 +44,7 @@ const ToolkitSection = () => {
 
   return (
     <section
-      className="flex flex-col gap-6 xs:gap-8 md:gap-10 scroll-mt-24 md:scroll-mt-32 w-full mb-4"
+      className="flex flex-col gap-6 xs:gap-8 md:gap-10 scroll-mt-24 md:scroll-mt-32 w-full"
       id="toolkit"
     >
       {/* Header Section */}
