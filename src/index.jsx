@@ -106,7 +106,7 @@ export default function Index() {
         </div>
 
         {/* Main Layout Container */}
-        <div className="max-w-7xl mx-auto w-full relative flex-1">
+        <div className="max-w-380 mx-auto w-full relative flex-1">
           <div className="flex flex-col lg:flex-row">
             {/* Desktop Sidebar Container - Takes up space in flow but hidden on mobile */}
             <div className="hidden lg:block lg:w-80 xl:w-96 shrink-0">
@@ -118,7 +118,7 @@ export default function Index() {
 
             {/* Main Content Area */}
             <div className="flex-1 min-w-0">
-              <main className="mt-8 xs:mt-10 md:mt-12 lg:mt-13 px-6 sm:px-8 lg:px-6 xl:px-0">
+              <main className="mt-8 xs:mt-10 md:mt-12 lg:mt-13 px-6 sm:px-8 lg:px-6 xl:pr-12">
                 <Routes>
                   <Route path="/guide" element={<Guide />} />
                 </Routes>

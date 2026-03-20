@@ -44,53 +44,56 @@ const ToolkitSection = () => {
 
   return (
     <section
-      className="flex flex-col gap-10 scroll-mt-32 w-full mb-4"
+      className="flex flex-col gap-6 xs:gap-8 md:gap-10 scroll-mt-24 md:scroll-mt-32 w-full mb-4"
       id="toolkit"
     >
       {/* Header Section */}
-      <div className="flex flex-col gap-3" data-aos="fade-up">
-        <div className="flex flex-row items-center justify-start gap-2">
-          <div className="h-1 w-8 bg-(--color-primary) rounded-full"></div>
-          <h1 className="font-semibold text-2xl text-(--color-dark-text) dark:text-white">
+      <div className="flex flex-col gap-2 xs:gap-3" data-aos="fade-up">
+        <div className="flex flex-row items-center justify-start gap-2 xs:gap-2.5">
+          <div className="h-1 w-6 xs:w-8 bg-(--color-primary) rounded-full"></div>
+          <h1 className="font-semibold text-xl xs:text-2xl md:text-3xl text-(--color-dark-text) dark:text-white leading-tight">
             {t("toolkit.title")}
           </h1>
         </div>
-        <p className="text-sm text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-4xl leading-relaxed">
+        <p className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-4xl leading-relaxed">
           {t("toolkit.introText")}
         </p>
       </div>
 
       {/* Overview Table */}
       <div
-        className="flex flex-col gap-4 w-full"
+        className="flex flex-col gap-3 xs:gap-4 w-full"
         data-aos="fade-up"
         data-aos-delay="150"
       >
-        <h2 className="font-semibold text-lg text-(--color-dark-text) dark:text-white border-b border-(--color-divider)/50 pb-2">
+        <h2 className="font-semibold text-lg xs:text-xl text-(--color-dark-text) dark:text-white border-b border-(--color-divider)/50 pb-2">
           {t("toolkit.tableTitle")}
         </h2>
-        <div className="overflow-x-auto bg-white dark:bg-(--color-dark-text) rounded-md drop-shadow-lg border border-(--color-divider)/50 mt-2">
+
+        <div className="overflow-x-auto bg-white dark:bg-(--color-dark-text) rounded-md drop-shadow-lg border border-(--color-divider)/50 mt-1 xs:mt-2 no-scrollbar">
           <table className="w-full text-left border-collapse min-w-150">
             <thead>
-              <tr className="bg-(--color-bg-primary) dark:bg-slate-800/50 text-(--color-dark-text) dark:text-white text-sm border-b border-(--color-divider)/50">
-                <th className="p-4 font-semibold w-1/4">Tool</th>
-                <th className="p-4 font-semibold w-1/3">How it is Used</th>
-                <th className="p-4 font-semibold w-5/12">Purpose</th>
+              <tr className="bg-(--color-bg-primary) dark:bg-slate-800/50 text-(--color-dark-text) dark:text-white text-xs xs:text-sm border-b border-(--color-divider)/50">
+                <th className="p-3 xs:p-4 font-semibold w-1/4">Tool</th>
+                <th className="p-3 xs:p-4 font-semibold w-1/3">
+                  How it is Used
+                </th>
+                <th className="p-3 xs:p-4 font-semibold w-5/12">Purpose</th>
               </tr>
             </thead>
-            <tbody className="text-xs text-(--color-bg-dark) dark:text-(--color-bg-primary)">
+            <tbody className="text-[11px] xs:text-xs md:text-sm text-(--color-bg-dark) dark:text-(--color-bg-primary)">
               {toolkitData?.overview?.map((item, index) => (
                 <tr
                   key={index}
                   className="border-b border-(--color-divider)/30 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors"
                 >
-                  <td className="p-4 font-medium text-(--color-primary) align-top">
+                  <td className="p-3 xs:p-4 font-medium text-(--color-primary) align-top">
                     {item.tool}
                   </td>
-                  <td className="p-4 align-top leading-relaxed text-slate-600 dark:text-slate-300">
+                  <td className="p-3 xs:p-4 align-top leading-relaxed text-slate-600 dark:text-slate-300">
                     {item.usage}
                   </td>
-                  <td className="p-4 align-top leading-relaxed text-slate-600 dark:text-slate-300">
+                  <td className="p-3 xs:p-4 align-top leading-relaxed text-slate-600 dark:text-slate-300">
                     {item.purpose}
                   </td>
                 </tr>
@@ -102,11 +105,11 @@ const ToolkitSection = () => {
 
       {/* Interactive Sheets / Templates */}
       <div
-        className="flex flex-col gap-4 w-full mt-4"
+        className="flex flex-col gap-4 w-full mt-2 xs:mt-4"
         data-aos="fade-up"
         data-aos-delay="300"
       >
-        <h2 className="font-semibold text-lg text-(--color-dark-text) dark:text-white border-b border-(--color-divider)/50 pb-2">
+        <h2 className="font-semibold text-lg xs:text-xl text-(--color-dark-text) dark:text-white border-b border-(--color-divider)/50 pb-2">
           {t("toolkit.sheetsTitle")}
         </h2>
 
@@ -116,33 +119,29 @@ const ToolkitSection = () => {
               key={sheet.id}
               className="flex flex-col bg-white dark:bg-(--color-dark-text) rounded-md drop-shadow-sm border border-(--color-divider)/40 overflow-hidden transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800/30"
             >
-              {/* Accordion Header Container */}
               <div className="flex flex-row items-stretch justify-between w-full">
-                {/* Trigger Button - Main Clickable Area */}
                 <button
                   onClick={() => toggleSheet(sheet.id)}
-                  className="flex flex-row items-center gap-3 text-left p-4 flex-1 cursor-pointer"
+                  className="flex flex-row items-center gap-2.5 xs:gap-3 text-left p-3 xs:p-4 flex-1 cursor-pointer"
                 >
-                  <i className="fa-regular fa-file-lines text-(--color-secondary)"></i>
-                  <h3 className="font-medium text-sm text-(--color-dark-text) dark:text-white flex-1">
+                  <i className="fa-regular fa-file-lines text-(--color-secondary) text-sm xs:text-base"></i>
+                  <h3 className="font-medium text-xs xs:text-sm text-(--color-dark-text) dark:text-white flex-1 leading-tight">
                     {sheet.title}
                   </h3>
                   <i
-                    className={`fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform duration-300 ${
+                    className={`fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform duration-300 shrink-0 ${
                       openSheet === sheet.id ? "rotate-180" : ""
                     }`}
                   ></i>
                 </button>
 
-                {/* Print Button Wrapper */}
-                <div className="flex items-center pr-4">
+                <div className="flex items-center pr-3 xs:pr-4">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       handlePrint(sheet);
                     }}
-                    // Changed group-hover to standard hover so it only lights up when targeted directly
-                    className="flex flex-row items-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-(--color-primary) hover:text-white dark:text-slate-300 py-1.5 px-3 rounded text-xs font-medium transition-all cursor-pointer whitespace-nowrap"
+                    className="flex flex-row items-center gap-1.5 xs:gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-(--color-primary) hover:text-white dark:text-slate-300 py-1 xs:py-1.5 px-2 xs:px-3 rounded text-[10px] xs:text-xs font-medium transition-all cursor-pointer whitespace-nowrap"
                   >
                     <i className="fa-solid fa-print"></i>
                     {t("toolkit.print")}
@@ -150,16 +149,15 @@ const ToolkitSection = () => {
                 </div>
               </div>
 
-              {/* Accordion Content (Unchanged) */}
               <div
-                className={`transition-all duration-300 ease-in-out ${
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${
                   openSheet === sheet.id
                     ? "max-h-250 opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="p-5 bg-slate-50 dark:bg-slate-900/50 border-t border-(--color-divider)/30">
-                  <div className="bg-white dark:bg-slate-800 p-6 rounded border border-slate-200 dark:border-slate-700 shadow-inner font-mono text-xs text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed">
+                <div className="p-3 xs:p-4 md:p-5 bg-slate-50 dark:bg-slate-900/50 border-t border-(--color-divider)/30">
+                  <div className="bg-white dark:bg-slate-800 p-4 xs:p-5 md:p-6 rounded border border-slate-200 dark:border-slate-700 shadow-inner font-mono text-[10px] xs:text-xs text-slate-700 dark:text-slate-300 whitespace-pre-wrap leading-relaxed overflow-x-auto">
                     {sheet.content}
                   </div>
                 </div>

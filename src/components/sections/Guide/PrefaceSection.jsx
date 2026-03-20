@@ -39,30 +39,29 @@ const PrefaceSection = () => {
 
   return (
     <section
-      className="flex flex-col items-start gap-4 scroll-mt-30 w-full"
+      className="flex flex-col items-start gap-4 xs:gap-5 md:gap-6 scroll-mt-20 md:scroll-mt-30 w-full"
       id="preface"
     >
       <div
-        className="flex flex-row items-center justify-center gap-2"
+        className="flex flex-row items-center justify-center gap-2 xs:gap-2.5"
         data-aos="fade-up"
         data-aos-delay="500"
       >
-        <div className="h-1 w-8 bg-(--color-primary) rounded-full"></div>
-        <h1 className="font-semibold text-2xl text-(--color-dark-text) dark:text-white">
+        <div className="h-1 w-6 xs:w-8 bg-(--color-primary) rounded-full"></div>
+        <h1 className="font-semibold text-xl xs:text-2xl md:text-3xl text-(--color-dark-text) dark:text-white">
           {t("preface.title")}
         </h1>
       </div>
 
-      {/* Parent row container sets the available height */}
-      <div className="flex flex-col lg:flex-row justify-between gap-12 items-stretch w-full">
-        {/* Left Content: Text (Takes up remaining space, approx 60%) */}
-        <div className="flex flex-col gap-6 flex-1">
-          <div className="flex flex-col items-start gap-2">
+      <div className="flex flex-col xl:flex-row items-center xl:items-stretch justify-center xl:justify-between gap-6 xs:gap-8 md:gap-10 xl:gap-12 w-full">
+        {/* Left Content: Text */}
+        <div className="flex flex-col gap-4 md:gap-6 flex-1 w-full">
+          <div className="flex flex-col items-start gap-1.5 xs:gap-2">
             {staggeredElements.map((element, index) => {
               if (element.type === "paragraph") {
                 return (
                   <p
-                    className="text-sm text-(--color-bg-dark) dark:text-(--color-bg-primary) pb-4 leading-relaxed"
+                    className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary) pb-3 xs:pb-4 leading-relaxed"
                     key={`para-${index}`}
                     ref={index === 0 ? firstItemRef : null}
                     dangerouslySetInnerHTML={{ __html: element.content }}
@@ -79,7 +78,7 @@ const PrefaceSection = () => {
                 return (
                   <h1
                     key={`title-${index}`}
-                    className="text-sm font-semibold text-(--color-dark-text) dark:text-white mt-2"
+                    className="text-xs xs:text-sm md:text-base font-semibold text-(--color-dark-text) dark:text-white mt-1 xs:mt-2"
                     data-aos="fade-down"
                     data-aos-delay={800 + index * 150}
                     data-aos-anchor="#first-stagger-trigger"
@@ -92,14 +91,14 @@ const PrefaceSection = () => {
                 return (
                   <div
                     key={`body-${index}`}
-                    className="flex flex-row items-center justify-start gap-2.5 pt-1"
+                    className="flex flex-row items-center justify-start gap-2 xs:gap-2.5 pt-1"
                     data-aos="fade-down"
                     data-aos-delay={800 + index * 150}
                     data-aos-anchor="#first-stagger-trigger"
                     data-aos-anchor-placement="top-bottom"
                   >
-                    <i className="fa-solid fa-location-dot text-(--color-primary) shrink-0"></i>
-                    <p className="text-sm text-(--color-bg-dark) dark:text-(--color-bg-primary)">
+                    <i className="fa-solid fa-location-dot text-(--color-primary) shrink-0 text-sm"></i>
+                    <p className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary)">
                       {element.content}
                     </p>
                   </div>
@@ -110,10 +109,13 @@ const PrefaceSection = () => {
           </div>
         </div>
 
-        {/* Right Content: Dynamic Image - Exactly 40% width on large screens */}
+        {/* Right Content: Image 
+          Uses explicit heights for compact column layout, 
+          then auto-height + self-stretch for the xl row layout.
+        */}
         <Link
           to="/ceramics"
-          className="relative rounded-md w-full lg:w-2/5 min-h-62.5 lg:min-h-0 self-stretch block overflow-hidden drop-shadow-lg shrink-0 bg-gray-200 dark:bg-gray-800"
+          className="relative rounded-md w-full max-w-lg md:max-w-xl mx-auto xl:mx-0 xl:w-2/5 shrink-0 block overflow-hidden drop-shadow-lg h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-auto xl:self-stretch bg-gray-200 dark:bg-gray-800"
           data-aos="fade-down"
           data-aos-delay="1100"
         >
