@@ -34,7 +34,7 @@ const WorkshopCardBig = ({
 
       <div className="flex flex-col justify-start items-start flex-1 gap-2 xs:gap-3 md:gap-3.5">
         <div className="flex flex-col justify-center items-start gap-2 xs:gap-2.5 md:gap-3 w-full">
-          <h1 className="text-sm md:text-base lg:text-lg font-bold text-(--color-dark-text) dark:text-white w-full line-clamp-2">
+          <h1 className="text-sm md:text-base lg:text-lg font-bold text-(--color-primary) dark:text-(--color-primary2) w-full line-clamp-2">
             {title}
           </h1>
         </div>
