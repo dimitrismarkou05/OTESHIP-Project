@@ -85,7 +85,7 @@ const GalleryPageSkeleton = () => {
             {/* 1. Workshops Section Skeleton */}
             <div className="w-full">
               <SectionHeaderSkeleton hasDescription={true} />
-              <DesktopGridSkeleton count={8} />{" "}
+              <DesktopGridSkeleton count={8} />
               {/* Fills 2 rows on large screens */}
               <MobileCarouselSkeleton />
             </div>
@@ -103,7 +103,7 @@ const GalleryPageSkeleton = () => {
                       alignStart={true}
                       isSmallTitle={true}
                     />
-                    <DesktopGridSkeleton count={4} />{" "}
+                    <DesktopGridSkeleton count={4} />
                     {/* Fills 1 row on large screens */}
                     <MobileCarouselSkeleton />
                   </div>
@@ -114,7 +114,7 @@ const GalleryPageSkeleton = () => {
             {/* 3. Exhibitions Section Skeleton */}
             <div className="w-full">
               <SectionHeaderSkeleton hasDescription={true} />
-              <DesktopGridSkeleton count={8} />{" "}
+              <DesktopGridSkeleton count={8} />
               {/* Fills 2 rows on large screens */}
               <MobileCarouselSkeleton />
             </div>
