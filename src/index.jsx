@@ -99,7 +99,7 @@ export default function Index() {
 
         {/* Mobile Drawer (Slides from Left) */}
         <div
-          className={`fixed inset-y-0 left-0 z-5000 w-[85vw] max-w-sm bg-white dark:bg-(--color-dark-text) shadow-2xl transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col ${
+          className={`fixed inset-y-0 left-0 z-5000 w-[85vw] max-w-sm bg-white dark:bg-(--color-dark-text)  transform transition-transform duration-300 ease-in-out lg:hidden flex flex-col ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
