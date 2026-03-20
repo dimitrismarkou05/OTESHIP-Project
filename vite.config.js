@@ -6,7 +6,7 @@ import { imagetools } from "vite-imagetools";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), imagetools()],
-  base: "./",
+  base: "/",
   server: {
     host: true,
   },
