@@ -23,7 +23,7 @@ const AccessibilityMenu = () => {
     fixed bottom-24 right-0 z-5000
     bg-(--color-primary) hover:bg-(--color-primary-hover) 
     dark:bg-(--color-primary2) dark:hover:bg-(--color-primary2-hover)
-    text-white p-3 sm:p-4 rounded-l-xl
+    text-white py-3.5 sm:py-4.5 px-2.5 sm:px-3.5 rounded-l-xl
     drop-shadow-xl cursor-pointer
     transition-all duration-300 ease-in-out
     hover:pl-5 flex items-center justify-center
@@ -31,7 +31,7 @@ const AccessibilityMenu = () => {
 
   // Menu panel styling - Width caps at w-80 starting at xs (440px)
   const menuClasses = `
-    fixed bottom-24 right-4 right-4 xs:right-14 sm:right-16 z-5000
+    fixed bottom-24 right-4 xs:right-14 sm:right-16 z-5000
     bg-white dark:bg-(--color-dark2-text)
     shadow-2xl rounded-xl
     p-4 sm:p-5 
@@ -75,7 +75,7 @@ const AccessibilityMenu = () => {
                   key={size}
                   onClick={() => updateSettings({ fontSize: size })}
                   className={`
-                    flex-1 px-2 py-1.5 sm:px-3 sm:py-2 text-[10px] xs:text-xs sm:text-sm rounded cursor-pointer
+                    flex-1 px-2 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm rounded cursor-pointer
                     transition-all capitalize font-medium
                     ${
                       settings.fontSize === size
@@ -102,7 +102,7 @@ const AccessibilityMenu = () => {
                   key={contrast}
                   onClick={() => updateSettings({ contrast })}
                   className={`
-                    flex-1 px-2 py-1.5 sm:px-3 sm:py-2 text-[10px] xs:text-xs sm:text-sm rounded cursor-pointer
+                    flex-1 px-2 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm rounded cursor-pointer
                     transition-all capitalize font-medium
                     ${
                       settings.contrast === contrast
@@ -129,7 +129,7 @@ const AccessibilityMenu = () => {
                   key={spacing}
                   onClick={() => updateSettings({ lineSpacing: spacing })}
                   className={`
-                    flex-1 px-2 py-1.5 sm:px-3 sm:py-2 text-[10px] xs:text-xs sm:text-sm rounded cursor-pointer
+                    flex-1 px-2 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm rounded cursor-pointer
                     transition-all capitalize font-medium
                     ${
                       settings.lineSpacing === spacing

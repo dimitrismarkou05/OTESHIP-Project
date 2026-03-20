@@ -76,11 +76,17 @@ export default function Index() {
         {/* Mobile Sidebar Toggle Button (Left Edge) */}
         <button
           onClick={() => setIsSidebarOpen(true)}
-          className={`lg:hidden fixed left-0 top-1/2 -translate-y-1/2 z-40 bg-(--color-primary) dark:bg-(--color-primary2) text-white p-3 sm:p-4 rounded-r-xl drop-shadow-xl transition-all duration-300 ease-in-out hover:pl-5 cursor-pointer ${
-            isSidebarOpen
-              ? "-translate-x-full opacity-0 pointer-events-none"
-              : "translate-x-0 opacity-100"
-          }`}
+          className={`lg:hidden fixed left-0 top-1/2 -translate-y-1/2 z-40 
+    bg-(--color-primary) hover:bg-(--color-primary-hover)
+    dark:bg-(--color-primary2) dark:hover:bg-(--color-primary2-hover)
+    text-white py-3.5 sm:py-4.5 px-2 sm:px-2.5 rounded-r-xl
+    drop-shadow-xl cursor-pointer
+    transition-all duration-300 ease-in-out
+    hover:pr-5 flex items-center justify-center ${
+      isSidebarOpen
+        ? "-translate-x-full opacity-0 pointer-events-none"
+        : "translate-x-0 opacity-100"
+    }`}
           aria-label="Open Guide Menu"
         >
           <i className="fa-solid fa-chevron-right text-lg sm:text-xl"></i>
