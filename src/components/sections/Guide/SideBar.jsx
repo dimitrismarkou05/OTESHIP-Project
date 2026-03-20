@@ -17,11 +17,11 @@ const SideBar = () => {
 
   return (
     <aside
-      className="flex flex-col h-full w-full drop-shadow-lg/10"
+      className="flex flex-col h-full w-full drop-shadow-lg/10 bg-white dark:bg-(--color-dark-text) rounded-md overflow-hidden"
       data-aos="fade-right"
     >
-      {/* Header */}
-      <div className="flex flex-col gap-2 p-5 bg-(--color-bg-primary) dark:bg-(--color-bg-dark) rounded-t-md border-b border-(--color-light3-text)/40">
+      {/* Header - Fixed at top */}
+      <div className="flex flex-col gap-2 p-5 bg-(--color-bg-primary) dark:bg-(--color-bg-dark) border-b border-(--color-light3-text)/40 shrink-0">
         <div className="flex flex-row items-center justify-start gap-2.5">
           <div className="bg-(--color-primary) dark:bg-(--color-primary2) rounded-md p-1.5 text-white">
             <i className="fa-solid fa-book-open"></i>
@@ -35,50 +35,53 @@ const SideBar = () => {
         </p>
       </div>
 
-      {/* Navigation Links */}
-      <div className="border-b border-(--color-light3-text)/40 bg-white dark:bg-(--color-dark-text) flex flex-col gap-1.5 p-5 overflow-y-auto [&_a]:hover:bg-(--color-primary)/5 [&_a_i]:text-slate-900/55 [&_a:hover_i]:text-(--color-primary) [&_a]:hover:text-(--color-primary) [&_a]:p-1.5 [&_a]:px-3 [&_a]:rounded-md">
+      {/* Navigation Links - flex-1 allows this to grow and push the footer down */}
+      <div className="flex-1 flex flex-col gap-1.5 p-5 overflow-y-auto [&_a]:hover:bg-(--color-primary)/5 [&_a_i]:text-slate-900/55 [&_a:hover_i]:text-(--color-primary) [&_a]:hover:text-(--color-primary) [&_a]:p-1.5 [&_a]:px-3 [&_a]:rounded-md">
+        {/* Helper class 'items-start' and 'pt-1' on icons ensures top-alignment for multi-line text */}
         <a
           href="#preface"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-regular fa-comment text-sm"></i>{" "}
-          {t("sidebar.preface")}
+          <i className="fa-regular fa-comment text-sm pt-1"></i>
+          <span>{t("sidebar.preface")}</span>
         </a>
+
         <a
           href="#legislation"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-scale-balanced text-sm"></i>{" "}
-          {t("sidebar.legislation")}
+          <i className="fa-solid fa-scale-balanced text-sm pt-1"></i>
+          <span>{t("sidebar.legislation")}</span>
         </a>
 
         {/* Employment Group */}
         <a
           href="#employment"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-briefcase text-sm"></i>{" "}
-          {t("sidebar.employment")}
+          <i className="fa-solid fa-briefcase text-sm pt-1"></i>
+          <span>{t("sidebar.employment")}</span>
         </a>
-        <div className="text-sm flex flex-col ml-6.5 [&_a]:hover:bg-transparent [&_a]:text-(--color-dark2-text)">
+
+        <div className="text-sm flex flex-col ml-6.5 [&_a]:hover:bg-transparent [&_a]:text-(--color-dark2-text) mb-1">
           <a
             href="#employment"
             onClick={(e) => handleEmploymentClick(e, "public")}
-            className="cursor-pointer hover:text-(--color-primary) transition-colors"
+            className="cursor-pointer hover:text-(--color-primary) transition-colors py-1"
           >
             {t("sidebar.publicSect")}
           </a>
           <a
             href="#employment"
             onClick={(e) => handleEmploymentClick(e, "private")}
-            className="cursor-pointer hover:text-(--color-primary) transition-colors"
+            className="cursor-pointer hover:text-(--color-primary) transition-colors py-1"
           >
             {t("sidebar.privateSect")}
           </a>
           <a
             href="#employment"
             onClick={(e) => handleEmploymentClick(e, "freelance")}
-            className="cursor-pointer hover:text-(--color-primary) transition-colors"
+            className="cursor-pointer hover:text-(--color-primary) transition-colors py-1"
           >
             {t("sidebar.freelance")}
           </a>
@@ -86,60 +89,60 @@ const SideBar = () => {
 
         <a
           href="#skills"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-graduation-cap text-sm"></i>{" "}
-          {t("sidebar.skills")}
+          <i className="fa-solid fa-graduation-cap text-sm pt-1"></i>
+          <span>{t("sidebar.skills")}</span>
         </a>
         <a
           href="#entrepreneurship"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-rocket text-sm"></i> {t("sidebar.business")}
+          <i className="fa-solid fa-rocket text-sm pt-1"></i>
+          <span>{t("sidebar.business")}</span>
         </a>
         <a
           href="#family_municipality"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-user-group text-sm"></i>{" "}
-          {t("sidebar.municipality")}
+          <i className="fa-solid fa-user-group text-sm pt-1"></i>
+          <span>{t("sidebar.municipality")}</span>
         </a>
 
-        {/* NEW SECTIONS */}
         <a
           href="#entrepreneurs"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-comments text-sm"></i>{" "}
-          {t("sidebar.entrepreneurs")}
+          <i className="fa-solid fa-comments text-sm pt-1"></i>
+          <span>{t("sidebar.entrepreneurs")}</span>
         </a>
         <a
           href="#good-practices"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-star text-sm"></i>{" "}
-          {t("sidebar.goodPractices")}
+          <i className="fa-solid fa-star text-sm pt-1"></i>
+          <span>{t("sidebar.goodPractices")}</span>
         </a>
         <a
           href="#toolkit"
-          className="flex flex-row items-center justify-start gap-2 text-(--color-dark-text) dark:text-white"
+          className="flex flex-row items-start justify-start gap-2 text-(--color-dark-text) dark:text-white"
         >
-          <i className="fa-solid fa-toolbox text-sm"></i> {t("sidebar.toolkit")}
+          <i className="fa-solid fa-toolbox text-sm pt-1"></i>
+          <span>{t("sidebar.toolkit")}</span>
         </a>
       </div>
 
-      {/* Footer */}
-      <div className="bg-(--color-bg-primary) dark:bg-(--color-bg-dark) p-5 border-b border-(--color-light3-text)/40">
+      {/* Footer - Always at the very bottom */}
+      <div className="bg-(--color-bg-primary) dark:bg-(--color-bg-dark) p-5 border-t border-(--color-light3-text)/40 mt-auto shrink-0">
         <div className="flex flex-row justify-start items-center gap-3">
-          <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center shrink-0">
             <span className="fi fi-eu text-4xl block scale-135"></span>
           </div>
-          <h1 className="text-(--color-bg-dark) dark:text-(--color-bg-primary) text-xs max-w-40">
+          <h1 className="text-(--color-bg-dark) dark:text-(--color-bg-primary) text-[10px] leading-tight max-w-40 uppercase font-medium">
             {t("sidebar.footer")}
           </h1>
         </div>
       </div>
-      <div className="bg-white dark:bg-(--color-dark-text) flex-1 rounded-b-md"></div>
     </aside>
   );
 };
