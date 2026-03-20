@@ -81,6 +81,245 @@ const toolkitData = {
       },
     ],
   },
+
+  ελ: {
+    overview: [
+      {
+        tool: "Προφίλ Δεξιοτήτων Μαθητή",
+        usage: "Συμπληρώνεται μέσω παρατήρησης και ενημερώνεται τακτικά.",
+        purpose: "Εντοπίζει τα δυνατά σημεία και τα ενδιαφέροντα.",
+      },
+      {
+        tool: "Κάρτες Εργασιών",
+        usage: "Δίνονται στους μαθητές κατά τη διάρκεια δραστηριοτήτων.",
+        purpose: "Υποστηρίζουν την κατανόηση ρόλων και δομής.",
+      },
+      {
+        tool: "Πρότυπα Μικρών Έργων",
+        usage: "Χρησιμοποιούνται βήμα-βήμα στα εργαστήρια.",
+        purpose: "Προάγουν τη μάθηση μέσω πράξης.",
+      },
+      {
+        tool: "Σενάρια Παιχνιδιού Ρόλων",
+        usage: "Εξασκούνται στην τάξη.",
+        purpose: "Αναπτύσσουν επικοινωνία και αυτοπεποίθηση.",
+      },
+      {
+        tool: "Οπτικές Επιχειρηματικές Έννοιες",
+        usage: "Χρησιμοποιούνται κατά τη διδασκαλία.",
+        purpose: "Βοηθούν στην κατανόηση βασικών επιχειρηματικών ιδεών.",
+      },
+      {
+        tool: "Πρότυπο Portfolio",
+        usage: "Δημιουργείται σταδιακά.",
+        purpose: "Αναδεικνύει δεξιότητες για μελλοντικές ευκαιρίες.",
+      },
+      {
+        tool: "Σετ Συμμετοχής στην Κοινότητα",
+        usage: "Χρησιμοποιείται σε εκθέσεις και παζάρια.",
+        purpose: "Ενισχύει την παρουσίαση και την προβολή.",
+      },
+      {
+        tool: "Φύλλα Αναστοχασμού",
+        usage: "Συμπληρώνονται μετά από κάθε δραστηριότητα.",
+        purpose: "Ενθαρρύνουν την αυτογνωσία και τη βελτίωση.",
+      },
+    ],
+    sheets: [
+      {
+        id: "profile",
+        title: "1. Προφίλ Δεξιοτήτων Μαθητή",
+        content:
+          "Όνομα: __________________________\nΗλικία: __________________________\n\nΤι μου αρέσει να κάνω:\n________________________________________________\n\nΤι μπορώ να κάνω καλά:\n________________________________________________\n\nΜπορώ να δουλέψω:\n[ ] Μόνος/η    [ ] Με βοήθεια    [ ] Σε ομάδα\n\nΤα δυνατά μου σημεία:\n________________________________________________\n\nΤι θέλω να μάθω:\n________________________________________________",
+      },
+      {
+        id: "task",
+        title: "2. Κάρτα Εργασίας (Παράδειγμα)",
+        content:
+          "ΕΡΓΑΣΙΑ: Προετοιμασία υλικών\n\n[ ] Πάρε τα εργαλεία\n[ ] Βάλε τα στο τραπέζι\n[ ] Έλεγξε αν είναι όλα έτοιμα\n\n-> Όταν τελειώσω, ενημερώνω τον/την εκπαιδευτικό.",
+      },
+      {
+        id: "project",
+        title: "3. Πρότυπο Μικρού Έργου",
+        content:
+          "Τίτλος έργου: ______________________\n\nΒήμα 1: Τι θα δημιουργήσουμε;\n________________________________________________\n\nΒήμα 2: Τι χρειαζόμαστε;\n________________________________________________\n\nΒήμα 3: Ποιος κάνει τι;\n________________________________________________\n\nΒήμα 4: Ας δημιουργήσουμε!\n\nΒήμα 5: Ας παρουσιάσουμε τη δουλειά μας!\n________________________________________________",
+      },
+      {
+        id: "roleplay",
+        title: "4. Σενάριο Παιχνιδιού Ρόλων",
+        content:
+          "Κατάσταση: Πελάτης – Πωλητής\n\nΠελάτης: 'Γεια σας, τι είναι αυτό;'\nΜαθητής: 'Αυτό είναι ________.'\nΠελάτης: 'Πόσο κοστίζει;'\nΜαθητής: 'Κοστίζει ________.'\n\n-> Στόχος: Εξάσκηση ευγενικής επικοινωνίας.",
+      },
+      {
+        id: "reflection",
+        title: "5. Φύλλο Αναστοχασμού",
+        content:
+          "Τι έκανα σήμερα;\n________________________________________________\n\nΤι μου άρεσε;\n________________________________________________\n\nΤι ήταν δύσκολο;\n________________________________________________\n\nΠώς ένιωσα;\n________________________________________________",
+      },
+      {
+        id: "portfolio",
+        title: "6. Απλή Σελίδα Portfolio",
+        content:
+          "Το όνομά μου: ____________________\n\n[ Φωτογραφία της δουλειάς μου ]\n\nΤι έκανα:\n________________________________________________\n\nΜπορώ να το κάνω μόνος/η:\n[ ] Ναι    [ ] Με βοήθεια\n\nΣχόλιο εκπαιδευτικού:\n________________________________________________",
+      },
+    ],
+  },
+
+  pl: {
+    overview: [
+      {
+        tool: "Profil umiejętności ucznia",
+        usage: "Uzupełniany na podstawie obserwacji.",
+        purpose: "Identyfikuje mocne strony i zainteresowania.",
+      },
+      {
+        tool: "Karty zadań",
+        usage: "Używane podczas zajęć.",
+        purpose: "Pomagają zrozumieć role.",
+      },
+      {
+        tool: "Szablony mini projektów",
+        usage: "Stosowane krok po kroku.",
+        purpose: "Uczenie przez działanie.",
+      },
+      {
+        tool: "Scenariusze odgrywania ról",
+        usage: "Ćwiczone w klasie.",
+        purpose: "Budują komunikację.",
+      },
+      {
+        tool: "Wizualne pojęcia biznesowe",
+        usage: "Podczas nauczania.",
+        purpose: "Zrozumienie podstaw biznesu.",
+      },
+      {
+        tool: "Szablon portfolio",
+        usage: "Tworzony stopniowo.",
+        purpose: "Prezentacja umiejętności.",
+      },
+      {
+        tool: "Zestaw działań społecznych",
+        usage: "Na wydarzeniach.",
+        purpose: "Widoczność.",
+      },
+      {
+        tool: "Karty refleksji",
+        usage: "Po zadaniach.",
+        purpose: "Rozwój świadomości.",
+      },
+    ],
+    sheets: [
+      {
+        id: "profile",
+        title: "1. Profil ucznia",
+        content:
+          "Imię: __________________________\nWiek: __________________________",
+      },
+      {
+        id: "task",
+        title: "2. Karta zadania",
+        content: "ZADANIE: Przygotuj materiały",
+      },
+      {
+        id: "project",
+        title: "3. Mini projekt",
+        content: "Tytuł projektu: ______________________",
+      },
+      {
+        id: "roleplay",
+        title: "4. Scenariusz",
+        content: "Sytuacja: Klient – Sprzedawca",
+      },
+      {
+        id: "reflection",
+        title: "5. Refleksja",
+        content: "Co zrobiłem dzisiaj?",
+      },
+      {
+        id: "portfolio",
+        title: "6. Portfolio",
+        content: "Moje imię: ____________________",
+      },
+    ],
+  },
+
+  tr: {
+    overview: [
+      {
+        tool: "Öğrenci Beceri Profili",
+        usage: "Gözlem ile doldurulur.",
+        purpose: "Güçlü yönleri belirler.",
+      },
+      {
+        tool: "Görev Kartları",
+        usage: "Etkinliklerde kullanılır.",
+        purpose: "Rolleri anlamayı sağlar.",
+      },
+      {
+        tool: "Mini Proje Şablonları",
+        usage: "Adım adım kullanılır.",
+        purpose: "Yaparak öğrenme.",
+      },
+      {
+        tool: "Rol Yapma Senaryoları",
+        usage: "Sınıfta uygulanır.",
+        purpose: "İletişim geliştirir.",
+      },
+      {
+        tool: "Görsel İş Kavramları",
+        usage: "Ders sırasında.",
+        purpose: "Temel iş bilgisi sağlar.",
+      },
+      {
+        tool: "Portföy Şablonu",
+        usage: "Zamanla oluşturulur.",
+        purpose: "Becerileri gösterir.",
+      },
+      {
+        tool: "Toplum Katılım Seti",
+        usage: "Etkinliklerde.",
+        purpose: "Görünürlük sağlar.",
+      },
+      {
+        tool: "Değerlendirme Formları",
+        usage: "Görev sonrası.",
+        purpose: "Kendini geliştirme.",
+      },
+    ],
+    sheets: [
+      {
+        id: "profile",
+        title: "1. Öğrenci Profili",
+        content:
+          "Ad: __________________________\nYaş: __________________________",
+      },
+      {
+        id: "task",
+        title: "2. Görev Kartı",
+        content: "GÖREV: Malzemeleri hazırla",
+      },
+      {
+        id: "project",
+        title: "3. Mini Proje",
+        content: "Proje başlığı: ______________________",
+      },
+      {
+        id: "roleplay",
+        title: "4. Rol Senaryosu",
+        content: "Durum: Müşteri – Satıcı",
+      },
+      {
+        id: "reflection",
+        title: "5. Değerlendirme",
+        content: "Bugün ne yaptım?",
+      },
+      {
+        id: "portfolio",
+        title: "6. Portföy",
+        content: "Adım: ____________________",
+      },
+    ],
+  },
 };
 
 export default toolkitData;

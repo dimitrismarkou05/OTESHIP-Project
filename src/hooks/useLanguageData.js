@@ -10,7 +10,6 @@ import processCardsData from "../data/About/processCardsData";
 import schoolData from "../data/About/schoolData";
 import successCardsData from "../data/Guide/successCardsData";
 import skillsData from "../data/Guide/skillsData"; // Updated
-import benefitsCardsData from "../data/Guide/benefitsCardsData";
 import entrepreneurshipStepsData from "../data/Guide/entrepreneurshipStepsData"; // New
 import familyCardsData from "../data/Guide/familyCardsData";
 import munCardsData from "../data/Guide/munCardsData";
@@ -41,7 +40,6 @@ export const useLanguageData = () => {
     schoolData: getData(schoolData),
     successCardsData: getData(successCardsData),
     skillsData: getData(skillsData),
-    benefitsCardsData: getData(benefitsCardsData),
     entrepreneurshipStepsData: getData(entrepreneurshipStepsData),
     familyCardsData: getData(familyCardsData),
     munCardsData: getData(munCardsData),
