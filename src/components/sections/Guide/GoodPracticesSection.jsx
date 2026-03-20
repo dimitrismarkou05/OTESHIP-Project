@@ -14,25 +14,25 @@ const GoodPracticesSection = () => {
 
   return (
     <section
-      className="flex flex-col gap-6 xs:gap-8 md:gap-10 scroll-mt-24 md:scroll-mt-32 w-full"
+      className="flex flex-col gap-6 xs:gap-8 md:gap-10 scroll-mt-24 md:scroll-mt-32 w-full transition-colors duration-200"
       id="good-practices"
     >
       {/* Header Section */}
       <div className="flex flex-col gap-2 xs:gap-3" data-aos="fade-up">
         <div className="flex flex-row items-center justify-start gap-2 xs:gap-2.5">
           <div className="h-1 w-6 xs:w-8 bg-(--color-primary) rounded-full"></div>
-          <h1 className="font-semibold text-xl xs:text-2xl md:text-3xl text-(--color-dark-text) dark:text-white leading-tight">
+          <h1 className="font-semibold text-xl xs:text-2xl md:text-3xl text-(--color-dark-text) dark:text-white leading-tight transition-colors duration-200">
             {t("goodPractices.title")}
           </h1>
         </div>
-        <p className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-4xl leading-relaxed">
+        <p className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-4xl leading-relaxed transition-colors duration-200">
           {t("goodPractices.introText")}
         </p>
       </div>
 
       {/* Main Content Area: Tabs + Cards */}
       <div
-        className="flex flex-col gap-4 xs:gap-5 md:gap-6 w-full bg-white dark:bg-(--color-dark-text) drop-shadow-lg rounded-md p-5 xs:p-6 md:p-8"
+        className="flex flex-col gap-4 xs:gap-5 md:gap-6 w-full bg-white dark:bg-(--color-dark-text) drop-shadow-lg rounded-md p-5 xs:p-6 md:p-8 transition-colors duration-200"
         data-aos="fade-up"
         data-aos-delay="150"
       >
@@ -42,10 +42,10 @@ const GoodPracticesSection = () => {
             <button
               key={country}
               onClick={() => setActiveTab(country)}
-              className={`px-3 py-2 xs:px-5 xs:py-2.5 font-medium text-xs xs:text-sm transition-all duration-300 relative whitespace-nowrap cursor-pointer ${
+              className={`px-3 py-2 xs:px-5 xs:py-2.5 font-medium text-xs xs:text-sm [transition:color_200ms,all_300ms] relative whitespace-nowrap cursor-pointer ${
                 activeTab === country
-                  ? "text-(--color-primary)"
-                  : "text-(--color-bg-dark) dark:text-slate-400 hover:text-(--color-primary)/70"
+                  ? "text-(--color-primary) dark:text-white"
+                  : "text-(--color-bg-dark) dark:text-slate-400 hover:text-(--color-primary)/70 dark:hover:text-slate-200"
               }`}
             >
               {t(`goodPractices.tabs.${country}`)}
@@ -61,18 +61,18 @@ const GoodPracticesSection = () => {
           {currentPractices.map((practice, index) => (
             <div
               key={`${activeTab}-${index}`}
-              className="flex flex-col gap-2.5 xs:gap-3 bg-slate-50 dark:bg-slate-800/40 p-4 xs:p-5 rounded-md border border-(--color-divider)/30 hover:border-(--color-primary)/40 transition-colors animate-fade-in-up h-full"
+              className="flex flex-col gap-2.5 xs:gap-3 bg-slate-50 dark:bg-slate-800/40 p-4 xs:p-5 rounded-md border border-(--color-divider)/30 hover:border-(--color-primary)/40 transition-colors duration-200 animate-fade-in-up h-full"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="flex flex-row items-start gap-2.5 xs:gap-3">
-                <div className="bg-(--color-primary)/10 dark:bg-(--color-primary)/20 w-7 h-7 xs:w-8 xs:h-8 flex items-center justify-center text-(--color-primary) rounded-md shrink-0 mt-0.5">
+                <div className="bg-(--color-primary)/10 dark:bg-(--color-primary)/20 w-7 h-7 xs:w-8 xs:h-8 flex items-center justify-center text-(--color-primary) rounded-md shrink-0 mt-0.5 transition-colors duration-200">
                   <i className="fa-solid fa-lightbulb text-xs xs:text-sm"></i>
                 </div>
                 <div className="flex flex-col gap-1 xs:gap-1.5">
-                  <h3 className="font-semibold text-xs xs:text-sm md:text-base text-(--color-dark-text) dark:text-white leading-tight">
+                  <h3 className="font-semibold text-xs xs:text-sm md:text-base text-(--color-dark-text) dark:text-white leading-tight transition-colors duration-200">
                     {practice.title}
                   </h3>
-                  <p className="text-[10px] xs:text-[11px] md:text-xs text-(--color-bg-dark) dark:text-(--color-bg-primary) leading-relaxed">
+                  <p className="text-[10px] xs:text-[11px] md:text-xs text-(--color-bg-dark) dark:text-(--color-bg-primary) leading-relaxed transition-colors duration-200">
                     {practice.desc}
                   </p>
                 </div>

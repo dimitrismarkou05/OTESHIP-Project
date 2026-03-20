@@ -39,7 +39,7 @@ const PrefaceSection = () => {
 
   return (
     <section
-      className="flex flex-col items-start gap-4 xs:gap-5 md:gap-6 scroll-mt-20 md:scroll-mt-30 w-full"
+      className="flex flex-col items-start gap-4 xs:gap-5 md:gap-6 scroll-mt-20 md:scroll-mt-30 w-full transition-colors duration-200"
       id="preface"
     >
       <div
@@ -48,7 +48,7 @@ const PrefaceSection = () => {
         data-aos-delay="500"
       >
         <div className="h-1 w-6 xs:w-8 bg-(--color-primary) rounded-full"></div>
-        <h1 className="font-semibold text-xl xs:text-2xl md:text-3xl text-(--color-dark-text) dark:text-white">
+        <h1 className="font-semibold text-xl xs:text-2xl md:text-3xl text-(--color-dark-text) dark:text-white transition-colors duration-200">
           {t("preface.title")}
         </h1>
       </div>
@@ -61,7 +61,7 @@ const PrefaceSection = () => {
               if (element.type === "paragraph") {
                 return (
                   <p
-                    className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary) pb-3 xs:pb-4 leading-relaxed"
+                    className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary) pb-3 xs:pb-4 leading-relaxed transition-colors duration-200"
                     key={`para-${index}`}
                     ref={index === 0 ? firstItemRef : null}
                     dangerouslySetInnerHTML={{ __html: element.content }}
@@ -78,7 +78,7 @@ const PrefaceSection = () => {
                 return (
                   <h1
                     key={`title-${index}`}
-                    className="text-xs xs:text-sm md:text-base font-semibold text-(--color-dark-text) dark:text-white mt-1 xs:mt-2"
+                    className="text-xs xs:text-sm md:text-base font-semibold text-(--color-dark-text) dark:text-white mt-1 xs:mt-2 transition-colors duration-200"
                     data-aos="fade-down"
                     data-aos-delay={800 + index * 150}
                     data-aos-anchor="#first-stagger-trigger"
@@ -98,7 +98,7 @@ const PrefaceSection = () => {
                     data-aos-anchor-placement="top-bottom"
                   >
                     <i className="fa-solid fa-location-dot text-(--color-primary) shrink-0 text-sm"></i>
-                    <p className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary)">
+                    <p className="text-xs xs:text-sm md:text-base text-(--color-bg-dark) dark:text-(--color-bg-primary) transition-colors duration-200">
                       {element.content}
                     </p>
                   </div>
@@ -109,13 +109,10 @@ const PrefaceSection = () => {
           </div>
         </div>
 
-        {/* Right Content: Image 
-          Uses explicit heights for compact column layout, 
-          then auto-height + self-stretch for the xl row layout.
-        */}
+        {/* Right Content: Image */}
         <Link
           to="/ceramics"
-          className="relative rounded-md w-full max-w-lg md:max-w-xl mx-auto xl:mx-0 xl:w-2/5 shrink-0 block overflow-hidden drop-shadow-lg h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-auto xl:self-stretch bg-gray-200 dark:bg-gray-800"
+          className="relative rounded-md w-full max-w-lg md:max-w-xl mx-auto xl:mx-0 xl:w-2/5 shrink-0 block overflow-hidden drop-shadow-lg h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-auto xl:self-stretch bg-gray-200 dark:bg-gray-800 transition-colors duration-200"
           data-aos="fade-down"
           data-aos-delay="1100"
         >

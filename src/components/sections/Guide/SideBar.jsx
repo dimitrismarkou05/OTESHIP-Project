@@ -22,24 +22,24 @@ const SideBar = ({ onClose }) => {
 
   return (
     <aside
-      className="flex flex-col h-full w-full drop-shadow-lg/10 bg-white dark:bg-(--color-dark-text) rounded-md overflow-hidden"
+      className="flex flex-col h-full w-full drop-shadow-lg/10 bg-white dark:bg-(--color-dark-text) rounded-md overflow-hidden transition-colors duration-200"
       data-aos="fade-right"
     >
-      <div className="flex flex-col gap-2 p-4 xs:p-5 bg-(--color-bg-primary) dark:bg-(--color-bg-dark) border-b border-(--color-light3-text)/40 shrink-0">
+      <div className="flex flex-col gap-2 p-4 xs:p-5 bg-(--color-bg-primary) dark:bg-(--color-bg-dark) border-b border-(--color-light3-text)/40 dark:border-slate-700/60 shrink-0 transition-colors duration-200">
         <div className="flex flex-row items-center justify-start gap-2.5">
-          <div className="bg-(--color-primary) dark:bg-(--color-primary2) rounded-md p-1.5 text-white">
+          <div className="bg-(--color-primary) dark:bg-(--color-primary2) rounded-md p-1.5 text-white transition-colors duration-200">
             <i className="fa-solid fa-book-open"></i>
           </div>
-          <h1 className="font-bold text-base xs:text-lg text-(--color-dark-text) dark:text-white">
+          <h1 className="font-bold text-base xs:text-lg text-(--color-dark-text) dark:text-white transition-colors duration-200">
             {t("sidebar.title")}
           </h1>
         </div>
-        <p className="text-xs xs:text-sm text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-60">
+        <p className="text-xs xs:text-sm text-(--color-bg-dark) dark:text-(--color-bg-primary) max-w-60 transition-colors duration-200">
           {t("sidebar.subTitle")}
         </p>
       </div>
 
-      <div className="flex-1 flex flex-col gap-1.5 p-4 xs:p-5 overflow-y-auto [&_a]:hover:bg-(--color-primary)/5 [&_a_i]:text-slate-900/55 [&_a:hover_i]:text-(--color-primary) [&_a]:hover:text-(--color-primary) [&_a]:p-1.5 [&_a]:px-3 [&_a]:rounded-md">
+      <div className="flex-1 flex flex-col gap-1.5 p-4 xs:p-5 overflow-y-auto [&_a]:hover:bg-(--color-primary)/5 [&_a_i]:text-slate-900/55 dark:[&_a_i]:text-slate-300/55 [&_a:hover_i]:text-(--color-primary) dark:[&_a:hover_i]:text-(--color-primary2) [&_a]:hover:text-(--color-primary) dark:[&_a]:hover:text-(--color-primary2) [&_a]:p-1.5 [&_a]:px-3 [&_a]:rounded-md [&_a]:transition-colors [&_a_i]:duration-200">
         <a
           href="#preface"
           onClick={handleLinkClick}
@@ -71,25 +71,25 @@ const SideBar = ({ onClose }) => {
           </span>
         </a>
 
-        <div className="text-xs xs:text-sm flex flex-col ml-6.5 [&_a]:hover:bg-transparent [&_a]:text-(--color-dark2-text) mb-1">
+        <div className="text-xs xs:text-sm flex flex-col ml-6.5 [&_a]:hover:bg-transparent [&_a]:text-(--color-dark2-text) dark:[&_a]:text-slate-300 mb-1">
           <a
             href="#employment"
             onClick={(e) => handleEmploymentClick(e, "public")}
-            className="cursor-pointer hover:text-(--color-primary) transition-colors py-1"
+            className="cursor-pointer hover:text-(--color-primary) dark:hover:text-(--color-primary2) transition-colors duration-200 py-1"
           >
             {t("sidebar.publicSect")}
           </a>
           <a
             href="#employment"
             onClick={(e) => handleEmploymentClick(e, "private")}
-            className="cursor-pointer hover:text-(--color-primary) transition-colors py-1"
+            className="cursor-pointer hover:text-(--color-primary) dark:hover:text-(--color-primary2) transition-colors duration-200 py-1"
           >
             {t("sidebar.privateSect")}
           </a>
           <a
             href="#employment"
             onClick={(e) => handleEmploymentClick(e, "freelance")}
-            className="cursor-pointer hover:text-(--color-primary) transition-colors py-1"
+            className="cursor-pointer hover:text-(--color-primary) dark:hover:text-(--color-primary2) transition-colors duration-200 py-1"
           >
             {t("sidebar.freelance")}
           </a>
@@ -152,12 +152,12 @@ const SideBar = ({ onClose }) => {
         </a>
       </div>
 
-      <div className="bg-(--color-bg-primary) dark:bg-(--color-bg-dark) p-4 xs:p-5 border-t border-(--color-light3-text)/40 mt-auto shrink-0">
+      <div className="bg-(--color-bg-primary) dark:bg-(--color-bg-dark) p-4 xs:p-5 border-t border-(--color-light3-text)/40 dark:border-slate-700/60 mt-auto shrink-0 transition-colors duration-200">
         <div className="flex flex-row justify-start items-center gap-3">
           <div className="w-6 h-6 xs:w-8 xs:h-8 rounded-full overflow-hidden flex items-center justify-center shrink-0">
             <span className="fi fi-eu text-2xl xs:text-4xl block scale-135"></span>
           </div>
-          <h1 className="text-(--color-bg-dark) dark:text-(--color-bg-primary) text-[8px] xs:text-[10px] leading-tight max-w-40 uppercase font-medium">
+          <h1 className="text-(--color-bg-dark) dark:text-(--color-bg-primary) text-[8px] xs:text-[10px] leading-tight max-w-40 uppercase font-medium transition-colors duration-200">
             {t("sidebar.footer")}
           </h1>
         </div>
