@@ -22,7 +22,7 @@ const SideBar = ({ onClose }) => {
 
   return (
     <aside
-      className="flex flex-col h-full w-full drop-shadow-lg/10 bg-white dark:bg-(--color-dark-text) rounded-md overflow-hidden transition-colors duration-200"
+      className="flex flex-col h-full w-full drop-shadow-lg/10 bg-white dark:bg-(--color-dark-text) rounded-none lg:rounded-md overflow-hidden transition-colors duration-200"
       data-aos="fade-right"
     >
       <div className="flex flex-col gap-2 p-4 xs:p-5 bg-(--color-bg-primary) dark:bg-(--color-bg-dark) border-b border-(--color-light3-text)/40 dark:border-slate-700/60 shrink-0 transition-colors duration-200">
