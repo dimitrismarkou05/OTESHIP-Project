@@ -38,10 +38,28 @@
   --color-gold: #f59e0b;
   --color-gold2: #db8908;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* BASE TEXT SCALE (Default) */
+  --text-scale: 1;
 }
 
 @theme {
   --breakpoint-xs: 440px;
+
+  /* Multiply Tailwind text sizes by our scale factor */
+  --text-xs: calc(0.75rem * var(--text-scale));
+  --text-sm: calc(0.875rem * var(--text-scale));
+  --text-base: calc(1rem * var(--text-scale));
+  --text-lg: calc(1.125rem * var(--text-scale));
+  --text-xl: calc(1.25rem * var(--text-scale));
+  --text-2xl: calc(1.5rem * var(--text-scale));
+  --text-3xl: calc(1.875rem * var(--text-scale));
+  --text-4xl: calc(2.25rem * var(--text-scale));
+  --text-5xl: calc(3rem * var(--text-scale));
+  --text-6xl: calc(3.75rem * var(--text-scale));
+  --text-7xl: calc(4.5rem * var(--text-scale));
+  --text-8xl: calc(6rem * var(--text-scale));
+  --text-9xl: calc(8rem * var(--text-scale));
 }
 
 @layer base {
@@ -51,6 +69,8 @@
 
   body {
     font-family: var(--font-sans);
+    /* Ensures default body text scales too */
+    font-size: calc(1rem * var(--text-scale));
     overflow-x: hidden;
     @apply bg-(--color-dark-text) dark:bg-black transition-colors duration-200;
     @apply shadow-[0_10px_0_0_var(--color-dark-text)] dark:shadow-[0_10px_0_0_black];
@@ -99,14 +119,25 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Text Scaling */
+/* ========================================= */
+/* ACCESSIBILITY SCALING CLASSES             */
+/* ========================================= */
+
 .font-size-large {
-  font-size: 120%;
+  /* Safely scales text to 120% without breaking layout */
+  --text-scale: 1.2;
 }
 
 .font-size-xlarge {
-  font-size: 150%;
+  /* Safely scales text to 150% without breaking layout */
+  --text-scale: 1.5;
 }
+
+.no-text-scale {
+  --text-scale: 1 !important;
+}
+
+/* ========================================= */
 
 /* High Contrast Mode */
 .contrast-high {
