@@ -1,17 +1,19 @@
 {
   "hero": {
     "tag": "projekt erasmus+",
-    "title": "Przewodnik po praktykach rozwoju i promowania przedsiębiorczości",
+    "title": "Przewodnik po rozwoju i promowaniu przedsiębiorczości",
     "description": "W szkołach specjalnych: kompleksowy przewodnik dla nauczycieli, rodziców i interesariuszy.",
     "startReading": "Rozpocznij czytanie"
   },
   "preface": {
-    "title": "Przedmowa",
+    "title": "Wstęp",
     "paragraphs": [
-      "Przewodnik, który czytasz, został opracowany w ramach realizacji zatwierdzonego programu europejskiego Erasmus+ pt. <b>„Nasza tradycja… nasza przedsiębiorczość!”</b>.",
-      "Naszym głównym pomysłem było połączenie lokalnej tradycji z umiejętnościami uczniów. Poprzez warsztaty ceramiczne i artystyczne uczniowie pracowali nad nowymi technikami, wymieniali się pomysłami i tworzyli produkty inspirowane kulturą każdego regionu."
+      "Niniejszy przewodnik został opracowany w ramach zatwierdzonego europejskiego programu Erasmus+ pt. <b>„Nasza tradycja… nasza przedsiębiorczość!”</b>.",
+      "Program został zaprojektowany z myślą o przybliżeniu uczniom z niepełnosprawnościami idei przedsiębiorczości poprzez wykorzystanie ich umiejętności i talentów w kreatywnych działaniach realizowanych w szkolnych pracowniach.",
+      "Główną ideą było połączenie lokalnej tradycji z umiejętnościami uczniów. Podczas warsztatów ceramicznych i plastycznych realizowanych we wszystkich uczestniczących szkołach uczniowie pracowali nad nowymi technikami, wymieniali się pomysłami oraz tworzyli produkty inspirowane kulturą i tradycją każdego regionu.",
+      "Współpraca ta połączyła uczniów, nauczycieli i specjalistów z trzech różnych krajów, tworząc cenne doświadczenie wymiany wiedzy, kompetencji technicznych i dobrych praktyk."
     ],
-    "bodiesTitle": "Instytucje współpracujące:",
+    "bodiesTitle": "Partnerzy projektu:",
     "bodies": [
       "Ε.Ε.Ε.ΕΚ. Άργους Ορεστικού (Grecja)",
       "Manisa Ozel Egitim Uygulama Okulu (Turcja)",
@@ -19,72 +21,133 @@
     ]
   },
   "law": {
-    "title": "Prawo i prawa",
-    "description": "ONZ przyjęła Konwencję o prawach osób z niepełnosprawnościami. W zakresie pracy artykuł 27 uznaje, że osoby z niepełnosprawnościami mają takie samo prawo do zatrudnienia jak każdy inny obywatel.",
-    "rightsTitle": "Podstawowe prawa",
-    "rights": [
-      "Eliminacja dyskryminacji na każdym etapie zatrudnienia.",
-      "Ochrona sprawiedliwego wynagrodzenia i równych szans.",
-      "Dostęp do doradztwa zawodowego i szkoleń.",
-      "Dostosowanie miejsc pracy do potrzeb osób z niepełnosprawnościami."
+    "title": "Przepisy dotyczące zatrudnienia osób z niepełnosprawnościami",
+    "introText": "Od 1975 roku Organizacja Narodów Zjednoczonych podkreśla, że osoby z niepełnosprawnościami mają prawo do szkolenia zawodowego, rehabilitacji, doradztwa oraz pośrednictwa pracy, aby w pełni rozwijać swoje możliwości i aktywnie uczestniczyć w życiu społecznym.",
+    "unRightsTitle": "Konwencja ONZ o prawach osób z niepełnosprawnościami (CRPD) – Artykuł 27",
+    "unRights": [
+      "Eliminacja dyskryminacji ze względu na niepełnosprawność na wszystkich etapach zatrudnienia.",
+      "Ochrona prawa do godziwego wynagrodzenia, równych szans oraz bezpiecznych i zdrowych warunków pracy.",
+      "Równy dostęp do pracy oraz praw związkowych.",
+      "Dostęp do doradztwa zawodowego, szkoleń i uczenia się przez całe życie.",
+      "Promowanie możliwości zatrudnienia, rozwoju kariery oraz wsparcia.",
+      "Promowanie samozatrudnienia i przedsiębiorczości.",
+      "Zatrudnienie w sektorze publicznym oraz zachęty dla sektora prywatnego.",
+      "Racjonalne dostosowanie miejsc pracy.",
+      "Możliwości zdobywania doświadczenia zawodowego na otwartym rynku pracy.",
+      "Programy rehabilitacji zawodowej i utrzymania zatrudnienia."
     ],
-    "lawCardTitle": "Prawo greckie",
-    "lawCardDesc": "Zgodnie z Konstytucją (art. 21 ust. 6) osoby z niepełnosprawnościami mają prawo do integracji zawodowej.",
-    "lawTitle": "Ustawa 2643/1998",
-    "lawDesc": "Przedsiębiorstwa zatrudniające ponad 50 pracowników są zobowiązane do zatrudniania 8% osób z niepełnosprawnościami."
+    "tabs": {
+      "greece": "Grecja",
+      "poland": "Polska",
+      "turkey": "Turcja"
+    },
+    "grLaw": "Zgodnie z Konstytucją Grecji praca stanowi podstawowe prawo (artykuł 22). Artykuł 21 stanowi, że osoby z niepełnosprawnościami mają prawo do korzystania ze środków zapewniających ich autonomię oraz integrację zawodową. Przedsiębiorstwa zatrudniające powyżej 50 osób są zobowiązane do zatrudniania osób chronionych w wysokości 8% załogi (ustawa 2643/1998).",
+    "plLaw": "Zgodnie z Kodeksem pracy pracodawca nie może dyskryminować pracownika ze względu na niepełnosprawność. Główną instytucją wspierającą zatrudnienie jest Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych (PFRON), który oferuje dofinansowanie wynagrodzeń, refundację dostosowania stanowisk pracy oraz finansowanie szkoleń zawodowych.",
+    "trLaw": "Zatrudnienie osób z niepełnosprawnościami opiera się głównie na artykule 30 ustawy o pracy nr 4857. Pracodawcy w sektorze prywatnym zatrudniający powyżej 50 pracowników muszą zatrudniać co najmniej 3% osób z niepełnosprawnościami, natomiast w sektorze publicznym wskaźnik ten wynosi 4%. Kary za nieprzestrzeganie przepisów są wykorzystywane przez İŞKUR do finansowania grantów na przedsiębiorczość, szkoleń zawodowych oraz chronionych miejsc pracy."
   },
   "employment": {
     "title": "Rodzaje zatrudnienia",
+    "introText": "Wyniki badań wskazują, że integracja na rynku pracy pozostaje procesem złożonym. Niepełnosprawność nie odnosi się wyłącznie do widocznych ograniczeń fizycznych; obejmuje także trudności intelektualne lub psychospołeczne, gdzie marginalizacja bywa często jeszcze bardziej nasilona.",
+
     "puTitle": "Sektor publiczny",
-    "puDesc": "Rekrutacja poprzez ASEP ze specjalnymi punktami lub ogłoszenia wyłącznie dla osób z niepełnosprawnościami (np. 6K/2024).",
-    "puBenefits": ["Certyfikat KEPA", "5% limit w ogólnych stanowiskach"],
+    "puDesc": "Zatrudnienie w sektorze publicznym jest możliwe poprzez odpowiednie nabory (np. ASEP w Grecji, EKPSS w Turcji). Niektóre ogłoszenia są skierowane wyłącznie do osób z niepełnosprawnościami, inne przewidują określony procent miejsc (np. 5%).",
+
     "prTitle": "Sektor prywatny",
-    "prDesc": "Firmy, KINSEP i NGO. 8% obowiązek zatrudnienia w dużych przedsiębiorstwach.",
-    "prSubtitle": "Kroki integracji:",
+    "prDesc": "Firmy prywatne, spółdzielnie socjalne oraz organizacje non-profit tworzą możliwości zatrudnienia lub programy zatrudnienia wspieranego.",
+    "prSubtitle": "Etapy integracji:",
     "prSteps": [
-      "Szkolenie umiejętności",
-      "Zatrudnienie wspomagane",
-      "Dostosowanie stanowiska"
+      "Edukacja i rozwój umiejętności",
+      "Zatrudnienie wspierane",
+      "Dostosowanie miejsca pracy",
+      "Współpraca z instytucjami i organizacjami"
     ],
+    "successTitle": "Przykłady inicjatyw z kontekstu greckiego",
+
     "frTitle": "Samozatrudnienie",
-    "frDesc": "Możliwość prowadzenia własnej działalności z istotnymi ulgami podatkowymi.",
+    "frDesc": "Osoby z niepełnosprawnościami mogą podejmować samozatrudnienie, co daje większą elastyczność i autonomię w dostosowaniu działalności zawodowej do swoich możliwości.",
+    "frBenefitsTitle": "Ulgi i zwolnienia podatkowe (przykład Grecji):",
     "frBenefits": [
-      "Zwolnienie ze składki solidarnościowej",
-      "Ulgi i odliczenia podatkowe"
+      "Zwolnienie ze składki solidarnościowej (niepełnosprawność 80%+).",
+      "Automatyczna ulga podatkowa w wysokości 200 € (niepełnosprawność 67%+).",
+      "Zwolnienie lub obniżenie podatku ryczałtowego (dochód szacunkowy)."
     ],
-    "successTitle": "Przykłady sukcesu"
+    "personalAssistantTitle": "Rola asystenta osobistego",
+    "personalAssistantDesc": "Asystent osobisty (np. ustawa 4837/2021 w Grecji) to nowoczesny mechanizm wsparcia. Jego rolą nie jest zastępowanie osoby, lecz wspieranie jej w osiąganiu większej autonomii i bezpieczeństwa. W miejscu pracy pomaga w organizacji codziennych zadań, mobilności i komunikacji, wzmacniając utrzymanie zatrudnienia oraz tworząc pozytywne warunki dla pracownika i pracodawcy."
   },
   "skills": {
-    "title": "Nabywanie umiejętności zawodowych"
+    "title": "Nabywanie umiejętności zawodowych",
+    "introText": "Ścieżki edukacyjne i zawodowe różnią się w zależności od kraju, ale wszystkie mają na celu wyposażenie uczniów z niepełnosprawnościami w umiejętności praktyczne i społeczne potrzebne do integracji zawodowej.",
+    "tabs": {
+      "greece": "Grecja",
+      "poland": "Polska",
+      "turkey": "Turcja"
+    }
   },
   "business": {
-    "title": "Przedsiębiorczość w szkołach specjalnych",
-    "description": "Przedsiębiorczość to nie tylko działanie, ale mechanizm wzmacniający aktywny udział uczniów w społeczeństwie.",
-    "benefitsTitle": "Korzyści dla uczniów",
-    "stepsTitle": "Etapy wdrażania"
+    "title": "Rozwój przedsiębiorczości w szkołach specjalnych",
+    "introText": "Przedsiębiorczość to nie tylko kolejna aktywność szkolna. To praktyczny sposób na umożliwienie uczniom z niepełnosprawnościami bardziej aktywnego udziału w społeczeństwie poprzez łączenie nauki szkolnej z rynkiem pracy.",
+    "understandingTitle": "Zrozumienie przedsiębiorczości",
+    "understandingDesc": "W środowisku edukacyjnym oznacza to rozwijanie przez uczniów kreatywnych, innowacyjnych i praktycznych działań, które przybliżają ich do rzeczywistych procesów, takich jak produkcja, zarządzanie oraz korzystanie z produktów i usług.",
+    "importanceTitle": "Znaczenie dla uczniów",
+    "importanceDesc": "Wspiera niezależność, ułatwia dostęp do rynku pracy, rozwija sieci społeczne oraz wspiera uczenie się przez całe życie i rozwój osobisty.",
+    "formsTitle": "Formy przedsiębiorczości",
+    "formsDesc": "Może obejmować inicjatywy uczniowskie i małe przedsiębiorstwa szkolne (np. kiermasze), sieci młodzieżowej przedsiębiorczości (np. Junior Achievement), współpracę z organizacjami społecznymi oraz programy edukacyjne o charakterze przedsiębiorczym.",
+    "stepsTitle": "Kroki wdrażania działań przedsiębiorczych",
+    "stepsDesc": "Skuteczne przygotowanie to ciągły proces odkrywania mocnych stron i tworzenia wartościowych doświadczeń edukacyjnych."
   },
   "municipality": {
-    "familyTitle": "Rola rodziny",
-    "familyDesc": "Rodzina jest pierwszym i najbardziej stabilnym filarem wsparcia.",
-    "munTitle": "Rola gminy",
-    "munDesc": "Gminy rozumieją potrzeby lokalnej społeczności i mogą tworzyć lokalne ekosystemy."
+    "title": "Rola rodziny i samorządu",
+    "introText": "Rozwój przedsiębiorczości odbywa się w szerszym środowisku społecznym. Zarówno rodzina, jak i samorząd lokalny odgrywają ważną rolę w tworzeniu możliwości wspierających integrację.",
+    "familyTitle": "1. Rola rodziny",
+    "familyDesc": "Rodzina jest pierwszym i najbardziej stabilnym źródłem wsparcia. Zapewnia wsparcie psychologiczne, stanowi sieć bezpieczeństwa w sytuacjach niepewności, wspiera organizację działań oraz pomaga w budowaniu relacji społecznych.",
+    "munTitle": "2. Rola samorządu",
+    "munDesc": "Samorządy lokalne są blisko obywateli i mogą działać jako inicjatorzy możliwości poprzez wsparcie instytucjonalne, inicjatywy edukacyjne oraz tworzenie lokalnych ekosystemów przedsiębiorczości.",
+    "proposalsTitle": "Nasze propozycje dla władz lokalnych"
+  },
+  "entrepreneurs": {
+    "title": "Rozmowy z przedsiębiorcami",
+    "introText": "W ramach wzmacniania kultury przedsiębiorczości zorganizowano serię spotkań i wywiadów z lokalnymi przedsiębiorcami. Uczniowie uczestniczyli w rozmowach z profesjonalistami i obserwowali rzeczywiste środowiska pracy.",
+    "findingsTitle": "Nasze wnioski",
+    "findingsDesc": "Rozmowy wykazały, że postawy pracodawców są generalnie pozytywne, choć większość nie miała wcześniejszego doświadczenia z pracownikami z niepełnosprawnościami. Podkreślono potrzebę wsparcia ze strony państwa (dostosowanie miejsc pracy, dostępność). Doświadczenia pokazują, że integracja zawodowa wymaga współpracy między szkołami, przedsiębiorstwami i instytucjami.",
+    "tableTitle": "Czego oczekują firmy vs. co to oznacza w praktyce"
+  },
+  "goodPractices": {
+    "title": "Dobre praktyki w naszych krajach",
+    "introText": "Tworzenie realnych możliwości zatrudnienia wymaga współpracy między szkołami, przedsiębiorstwami, instytucjami publicznymi i społecznościami lokalnymi. Poniższe przykłady pokazują, jak można budować środowisko sprzyjające integracji.",
+    "tabs": {
+      "poland": "Polska",
+      "turkey": "Turcja",
+      "greece": "Grecja i współpraca międzynarodowa"
+    }
+  },
+  "toolkit": {
+    "title": "Załączniki: Zestaw narzędzi dla nauczyciela",
+    "introText": "Ten zestaw narzędzi zawiera uporządkowane szablony i metody pomagające nauczycielom w integrowaniu przedsiębiorczości i kształcenia zawodowego w edukacji specjalnej.",
+    "tableTitle": "Przegląd zestawu narzędzi",
+    "sheetsTitle": "Materiały do druku i szablony",
+    "print": "Drukuj"
   },
   "footer": {
-    "text": "Projekt Erasmus+: \"Nasza tradycja... nasza przedsiębiorczość!\"",
+    "conclusionTitle": "Zakończenie",
+    "conclusionText": "Małe kroki w naszych szkołach tworzą równe szanse dla każdego ucznia. Dzięki jednemu projektowi trzy szkoły specjalne połączyły siły, docierając do wielu uczniów i otwierając liczne możliwości. Przesłanie jest jasne: każdy uczeń zasługuje na szansę, by się uczyć, rozwijać i odnosić sukcesy.",
+    "text": "Projekt Erasmus+: „Nasza tradycja... nasza przedsiębiorczość!”",
     "copyright": "© 2024 Wszelkie prawa zastrzeżone."
   },
   "sidebar": {
     "title": "Przewodnik Erasmus+",
-    "subTitle": "Praktyki rozwoju i promocji przedsiębiorczości",
-    "preface": "Przedmowa",
-    "legislation": "1. Ustawodawstwo",
-    "employment": "2. Rodzaj zatrudnienia",
+    "subTitle": "Praktyki rozwoju i promowania przedsiębiorczości",
+    "preface": "Wstęp",
+    "legislation": "1. Przepisy",
+    "employment": "2. Rodzaje zatrudnienia",
+    "skills": "3. Nabywanie umiejętności",
+    "business": "4. Przedsiębiorczość",
+    "municipality": "5. Rodzina i samorząd",
+    "entrepreneurs": "6. Rozmowy z przedsiębiorcami",
+    "goodPractices": "7. Dobre praktyki",
+    "toolkit": "8. Zestaw narzędzi nauczyciela",
+    "footer": "Współfinansowane przez Unię Europejską",
     "publicSect": "A. Sektor publiczny",
     "privateSect": "B. Sektor prywatny",
-    "freelance": "C. Wolny zawód",
-    "skills": "Nabywanie umiejętności",
-    "business": "Przedsiębiorczość",
-    "municipality": "Rodzina i Gmina",
-    "footer": "Współfinansowane przez program Erasmus+"
+    "freelance": "C. Samozatrudnienie"
   }
 }

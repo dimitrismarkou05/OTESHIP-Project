@@ -145,7 +145,7 @@ const ToolkitSection = () => {
                     className="flex flex-row items-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-(--color-primary) hover:text-white dark:text-slate-300 py-1.5 px-3 rounded text-xs font-medium transition-all cursor-pointer whitespace-nowrap"
                   >
                     <i className="fa-solid fa-print"></i>
-                    Print
+                    {t("toolkit.print")}
                   </button>
                 </div>
               </div>

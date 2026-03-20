@@ -1,86 +1,153 @@
 {
   "hero": {
     "tag": "erasmus+ projesi",
-    "title": "Girişimciliğin Geliştirilmesi ve Teşviki İçin Uygulamalar Rehberi",
-    "description": "Özel Okullarda: Eğitimciler, Veliler ve Paydaşlar İçin Kapsamlı Bir Rehber.",
+    "title": "Girişimciliğin Geliştirilmesi ve Teşviki Rehberi",
+    "description": "Özel Okullarda: Eğitimciler, veliler ve paydaşlar için kapsamlı bir rehber.",
     "startReading": "Okumaya Başla"
   },
   "preface": {
     "title": "Önsöz",
     "paragraphs": [
-      "Okumakta olduğunuz rehber, onaylanmış Erasmus+ Avrupa programı kapsamında yürütülen <b>“Geleneğimiz… girişimciliğimiz!”</b> projesi çerçevesinde hazırlanmıştır.",
-      "Temel fikrimiz, yerel geleneği öğrencilerin becerileriyle birleştirmekti. Seramik ve sanat atölyeleri aracılığıyla öğrenciler yeni teknikler üzerinde çalıştı, fikir alışverişinde bulundu ve her bölgenin kültüründen ilham alan ürünler oluşturdu."
+      "Bu rehber, <b>“Bizim Geleneğimiz… Bizim Girişimciliğimiz!”</b> başlıklı onaylı Avrupa Erasmus+ programı kapsamında hazırlanmıştır.",
+      "Program, engelli öğrencileri girişimcilik kavramına yaklaştırmayı, onların yetenek ve becerilerini okul atölyelerinde gerçekleştirilen yaratıcı etkinlikler aracılığıyla geliştirmeyi amaçlamaktadır.",
+      "Temel fikir, yerel gelenek ile öğrencilerin becerilerini birleştirmekti. Tüm katılımcı okullarda gerçekleştirilen seramik ve görsel sanatlar atölyeleri sayesinde öğrenciler yeni teknikler üzerinde çalıştı, fikir alışverişinde bulundu ve her bölgenin kültür ve geleneklerinden ilham alan ürünler ortaya koydu.",
+      "Bu iş birliği, üç farklı ülkeden öğrencileri, eğitimcileri ve uzmanları bir araya getirerek bilgi paylaşımı, teknik uzmanlık ve iyi uygulamalar açısından değerli bir deneyim oluşturdu."
     ],
-    "bodiesTitle": "İş Birliği Yapılan Kurumlar:",
+    "bodiesTitle": "İş Birliği Yapan Kurumlar:",
     "bodies": [
       "Ε.Ε.Ε.ΕΚ. Άργους Ορεστικού (Yunanistan)",
-      "Manisa Ozel Egitim Uygulama Okulu (Türkiye)",
+      "Manisa Özel Eğitim Uygulama Okulu (Türkiye)",
       "Specjalny Ośrodek Szkolno-Wychowawczy (Polonya)"
     ]
   },
   "law": {
-    "title": "Mevzuat ve Haklar",
-    "description": "BM, Engelli Haklarına İlişkin Sözleşmeyi kabul etmiştir. Çalışma hakkı açısından Madde 27, engelli bireylerin diğer vatandaşlarla eşit istihdam hakkına sahip olduğunu kabul eder.",
-    "rightsTitle": "Temel Haklar",
-    "rights": [
-      "İstihdamın her aşamasında ayrımcılığın ortadan kaldırılması.",
-      "Adil ücret ve eşit fırsatların korunması.",
-      "Kariyer rehberliği ve eğitime erişim.",
-      "İş yerlerinin engelli bireylerin ihtiyaçlarına göre uyarlanması."
+    "title": "Engelli Bireylerin İstihdamına İlişkin Mevzuat",
+    "introText": "1975 yılından bu yana Birleşmiş Milletler, engelli bireylerin mesleki eğitim, rehabilitasyon, danışmanlık ve işe yerleştirme hizmetlerine erişim hakkına sahip olduğunu vurgulamaktadır; böylece yeteneklerini tam olarak geliştirebilir ve topluma aktif olarak katılabilirler.",
+    "unRightsTitle": "BM Engelli Hakları Sözleşmesi (CRPD) - Madde 27",
+    "unRights": [
+      "İstihdamın tüm aşamalarında engelliliğe dayalı ayrımcılığın ortadan kaldırılması.",
+      "Adil ücret, eşit fırsatlar ve güvenli, sağlıklı çalışma koşulları hakkının korunması.",
+      "Çalışma hayatına ve sendikal haklara eşit erişim.",
+      "Mesleki rehberlik, eğitim ve yaşam boyu öğrenmeye erişim.",
+      "İstihdam fırsatlarının, kariyer gelişiminin ve desteğin teşvik edilmesi.",
+      "Kendi işini kurma ve girişimciliğin desteklenmesi.",
+      "Kamu sektöründe istihdam ve özel sektörde istihdam için teşvikler.",
+      "İş yerlerinde makul düzenlemeler yapılması.",
+      "Açık iş gücü piyasasında iş deneyimi fırsatları.",
+      "Mesleki rehabilitasyon ve işte kalmayı destekleyen programlar."
     ],
-    "lawCardTitle": "Yunan Mevzuatı",
-    "lawCardDesc": "Anayasaya göre (Madde 21, fıkra 6), engelli bireylerin mesleki entegrasyon hakkı vardır.",
-    "lawTitle": "2643/1998 Sayılı Kanun",
-    "lawDesc": "50’den fazla çalışanı olan işletmeler, çalışanlarının %8’ini engelli bireylerden istihdam etmek zorundadır."
+    "tabs": {
+      "greece": "Yunanistan",
+      "poland": "Polonya",
+      "turkey": "Türkiye"
+    },
+    "grLaw": "Yunanistan Anayasası’na göre çalışma temel bir haktır (Madde 22). Madde 21, engelli bireylerin özerkliklerini ve mesleki entegrasyonlarını sağlayan önlemlerden yararlanma hakkına sahip olduğunu belirtir. 50’den fazla çalışanı olan işletmeler, çalışanlarının %8’i oranında korunan bireyleri istihdam etmekle yükümlüdür (Yasa 2643/1998).",
+    "plLaw": "İş Kanunu’na göre işveren, bir çalışanı engelliliği nedeniyle ayrımcılığa uğratamaz. İstihdamı destekleyen ana kurum, maaş sübvansiyonları, iş yeri uyarlamaları için geri ödemeler ve mesleki eğitim finansmanı sağlayan Devlet Engelli Rehabilitasyon Fonu’dur (PFRON).",
+    "trLaw": "Engelli istihdamı esas olarak 4857 sayılı İş Kanunu’nun 30. maddesine dayanmaktadır. 50 ve üzeri çalışanı olan özel sektör işverenleri en az %3 oranında, kamu sektörü işverenleri ise %4 oranında engelli birey istihdam etmek zorundadır. Uygunsuzluk durumunda kesilen cezalar, İŞKUR tarafından girişimcilik hibeleri, mesleki eğitimler ve korumalı iş yerlerinin finansmanında kullanılmaktadır."
   },
   "employment": {
     "title": "İstihdam Türleri",
+    "introText": "Araştırma bulguları, iş gücü piyasasına entegrasyonun karmaşık bir süreç olmaya devam ettiğini göstermektedir. Engellilik yalnızca görünür fiziksel engelleri ifade etmez; aynı zamanda zihinsel veya psikososyal zorlukları da kapsar ve bu durumlarda dışlanma çoğu zaman daha belirgindir.",
+
     "puTitle": "Kamu Sektörü",
-    "puDesc": "ASEP aracılığıyla özel puanlama sistemi veya yalnızca engelli bireylere yönelik ilanlar (örneğin 6K/2024).",
-    "puBenefits": ["KEPA Belgesi", "Genel kadrolarda %5 kota"],
+    "puDesc": "Kamu sektöründe istihdam, ilgili başvurular aracılığıyla mümkündür (örneğin Yunanistan’da ASEP, Türkiye’de EKPSS). Bazı ilanlar yalnızca engelli bireylere yöneliktir, bazıları ise belirli bir kota öngörür (örneğin %5).",
+
     "prTitle": "Özel Sektör",
-    "prDesc": "Şirketler, KINSEP ve STK’lar. Büyük şirketler için %8 istihdam zorunluluğu.",
+    "prDesc": "Özel şirketler, sosyal kooperatifler ve kâr amacı gütmeyen kuruluşlar istihdam fırsatları veya destekli istihdam programları sunar.",
     "prSubtitle": "Entegrasyon Adımları:",
-    "prSteps": ["Beceri eğitimi", "Destekli istihdam", "Pozisyon uyarlaması"],
-    "frTitle": "Serbest Çalışma",
-    "frDesc": "Önemli vergi avantajları ile kendi işini kurma imkânı.",
-    "frBenefits": [
-      "Dayanışma katkı payı muafiyeti",
-      "Vergi indirimleri ve teşvikler"
+    "prSteps": [
+      "Eğitim ve Beceri Geliştirme",
+      "Destekli İstihdam",
+      "İş Yeri Uyarlamaları",
+      "Kurumlar ve Organizasyonlarla İş Birliği"
     ],
-    "successTitle": "Başarı Örnekleri"
+    "successTitle": "Yunanistan’dan Girişim Örnekleri",
+
+    "frTitle": "Serbest Çalışma",
+    "frDesc": "Engelli bireyler serbest çalışmayı tercih edebilir; bu, mesleki faaliyetlerini kendi yeteneklerine göre uyarlamalarına olanak tanıyan daha fazla esneklik ve özerklik sağlar.",
+    "frBenefitsTitle": "Vergi İndirimleri ve Muafiyetler (Yunanistan Örneği):",
+    "frBenefits": [
+      "Dayanışma katkı payından muafiyet (%80+ engellilik).",
+      "200 € vergi indirimi (%67+ engellilik).",
+      "Varsayılan vergilendirmede (emsal gelir) muafiyet veya indirim."
+    ],
+    "personalAssistantTitle": "Kişisel Asistanın Rolü",
+    "personalAssistantDesc": "Kişisel Asistan (örneğin Yunanistan’da 4837/2021 sayılı yasa), modern bir destek mekanizmasıdır. Rolü bireyin yerini almak değil, daha fazla özerklik ve güvenlik sağlamaktır. İş yerinde günlük görevlerin organizasyonu, hareketlilik ve iletişim konularında destek olarak işte kalıcılığı güçlendirir ve hem çalışan hem de işveren için olumlu koşullar oluşturur."
   },
   "skills": {
-    "title": "Mesleki Becerilerin Kazanılması"
+    "title": "Mesleki Becerilerin Kazanılması",
+    "introText": "Eğitim ve mesleki yollar ülkeden ülkeye farklılık gösterse de hepsi engelli öğrencileri iş hayatına hazırlamak için gerekli pratik ve sosyal becerilerle donatmayı amaçlar.",
+    "tabs": {
+      "greece": "Yunanistan",
+      "poland": "Polonya",
+      "turkey": "Türkiye"
+    }
   },
   "business": {
-    "title": "Özel Okullarda Girişimcilik",
-    "description": "Girişimcilik sadece bir faaliyet değil, öğrencilerin topluma aktif katılımını güçlendiren bir mekanizmadır.",
-    "benefitsTitle": "Öğrenciler İçin Faydalar",
-    "stepsTitle": "Uygulama Adımları"
+    "title": "Özel Okullarda Girişimciliğin Geliştirilmesi",
+    "introText": "Girişimcilik sadece bir okul etkinliği değildir. Öğrencilerin okulda öğrendiklerini iş dünyasıyla ilişkilendirerek toplumda daha aktif rol almalarını sağlayan pratik bir yaklaşımdır.",
+    "understandingTitle": "Girişimciliği Anlamak",
+    "understandingDesc": "Eğitim ortamında bu, öğrencilerin üretim, yönetim ve hizmet süreçleri gibi gerçek yaşam uygulamalarına yaklaşmalarını sağlayan yaratıcı, yenilikçi ve pratik faaliyetler geliştirmeleri anlamına gelir.",
+    "importanceTitle": "Öğrenciler İçin Önemi",
+    "importanceDesc": "Bağımsızlığı teşvik eder, iş gücü piyasasına erişimi kolaylaştırır, sosyal ağları genişletir ve yaşam boyu öğrenme ile kişisel gelişimi destekler.",
+    "formsTitle": "Girişimcilik Türleri",
+    "formsDesc": "Bu; öğrenci girişimleri ve küçük okul işletmeleri (örneğin kermesler), genç girişimcilik ağları (örneğin Junior Achievement), sosyal kuruluşlarla iş birlikleri ve girişimcilik odaklı eğitim programlarını içerebilir.",
+    "stepsTitle": "Girişimcilik Faaliyetlerinin Uygulanma Adımları",
+    "stepsDesc": "Etkili hazırlık, güçlü yönleri keşfetme ve anlamlı öğrenme deneyimleri oluşturma sürecidir."
   },
   "municipality": {
-    "familyTitle": "Ailenin Rolü",
-    "familyDesc": "Aile, ilk ve en istikrarlı destek unsurudur.",
-    "munTitle": "Belediyenin Rolü",
-    "munDesc": "Belediyeler yerel toplumun ihtiyaçlarını anlar ve yerel ekosistemler oluşturabilir."
+    "title": "Aile ve Belediyenin Katkısı",
+    "introText": "Girişimciliğin gelişimi daha geniş bir sosyal çevrede gerçekleşir. Hem aile hem de yerel yönetimler kapsayıcı katılımı destekleyen fırsatlar yaratmada önemli rol oynar.",
+    "familyTitle": "1. Ailenin Katkısı",
+    "familyDesc": "Aile, ilk ve en istikrarlı destek kaynağıdır. Psikolojik destek sağlar, belirsizlik dönemlerinde güven ağı oluşturur, faaliyetlerin organizasyonunda yardımcı olur ve bireyin sosyal çevresini genişletmede aracı rol oynar.",
+    "munTitle": "2. Belediyenin Rolü",
+    "munDesc": "Belediyeler vatandaşlara yakındır ve kurumsal destek, eğitim girişimleri ve yerel girişimcilik ekosistemleri oluşturarak fırsatların gelişmesine öncülük edebilir.",
+    "proposalsTitle": "Yerel Yönetimler İçin Önerilerimiz"
+  },
+  "entrepreneurs": {
+    "title": "Girişimcilerle Görüşmeler",
+    "introText": "Girişimcilik kültürünü güçlendirmek amacıyla yerel girişimcilerle bir dizi toplantı ve röportaj düzenlenmiştir. Öğrenciler profesyonellerle görüşmeler yapmış ve gerçek iş ortamlarını gözlemlemiştir.",
+    "findingsTitle": "Bulgularımız",
+    "findingsDesc": "Görüşmeler, işverenlerin genel olarak olumlu bir tutum sergilediğini ancak çoğunun daha önce engelli çalışan deneyimi olmadığını göstermiştir. İşverenler, devlet desteğinin önemini vurgulamıştır (iş yeri uyarlamaları, erişilebilirlik). Deneyimler, mesleki entegrasyonun okul, işletme ve kurumlar arası iş birliği gerektirdiğini göstermektedir.",
+    "tableTitle": "İşletmelerin Talepleri ve Uygulamadaki Karşılığı"
+  },
+  "goodPractices": {
+    "title": "Ülkelerimizdeki İyi Uygulamalar",
+    "introText": "Gerçek istihdam fırsatları oluşturmak, okullar, işletmeler, kamu kurumları ve yerel topluluklar arasında iş birliği gerektirir. Aşağıdaki örnekler, kapsayıcı bir ortam oluşturmak için bu iş birliğinin nasıl gerçekleştirilebileceğini göstermektedir.",
+    "tabs": {
+      "poland": "Polonya",
+      "turkey": "Türkiye",
+      "greece": "Yunanistan ve Uluslararası İş Birliği"
+    }
+  },
+  "toolkit": {
+    "title": "Ekler: Öğretmen Araç Seti",
+    "introText": "Bu araç seti, girişimcilik ve mesleki eğitimi özel eğitim ortamlarına entegre etmek isteyen eğitimciler için yapılandırılmış şablonlar ve yöntemler sunar.",
+    "tableTitle": "Öğretmen Araç Seti Genel Bakış",
+    "sheetsTitle": "Yazdırılabilir Formlar ve Şablonlar",
+    "print": "Yazdır"
   },
   "footer": {
-    "text": "Erasmus+ Projesi: \"Geleneğimiz... girişimciliğimiz!\"",
-    "copyright": "© 2024 Tüm Hakları Saklıdır."
+    "conclusionTitle": "Sonuç",
+    "conclusionText": "Okullarımızdaki küçük adımlar her öğrenci için eşit fırsatlar yaratır. Tek bir proje sayesinde üç özel okul bir araya gelmiş, birçok öğrenciye ulaşmış ve sayısız fırsat yaratmıştır. Mesaj açıktır: her öğrenci öğrenme, gelişme ve başarıya ulaşma şansını hak eder.",
+    "text": "Erasmus+ Projesi: \"Bizim geleneğimiz... bizim girişimciliğimiz!\"",
+    "copyright": "© 2024 Tüm hakları saklıdır."
   },
   "sidebar": {
     "title": "Erasmus+ Rehberi",
-    "subTitle": "Girişimcilik geliştirme ve tanıtım uygulamaları",
+    "subTitle": "Girişimciliğin geliştirilmesi ve teşviki uygulamaları",
     "preface": "Önsöz",
     "legislation": "1. Mevzuat",
-    "employment": "2. İstihdam Türü",
+    "employment": "2. İstihdam Türleri",
+    "skills": "3. Beceri Kazanımı",
+    "business": "4. Girişimcilik",
+    "municipality": "5. Aile ve Belediye",
+    "entrepreneurs": "6. Girişimcilerle Görüşmeler",
+    "goodPractices": "7. İyi Uygulamalar",
+    "toolkit": "8. Öğretmen Araç Seti",
+    "footer": "Avrupa Birliği tarafından ortak finanse edilmiştir",
     "publicSect": "A. Kamu Sektörü",
     "privateSect": "B. Özel Sektör",
-    "freelance": "C. Serbest Çalışma",
-    "skills": "Beceri Edinimi",
-    "business": "Girişimcilik",
-    "municipality": "Aile ve Belediye",
-    "footer": "Erasmus+ Programı tarafından ortak finansman sağlanmıştır"
+    "freelance": "C. Serbest Çalışma"
   }
 }
