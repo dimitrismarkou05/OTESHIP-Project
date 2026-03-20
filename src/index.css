@@ -133,10 +133,6 @@ html {
   --text-scale: 1.5;
 }
 
-.no-text-scale {
-  --text-scale: 1 !important;
-}
-
 /* ========================================= */
 
 /* High Contrast Mode */

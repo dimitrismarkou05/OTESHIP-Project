@@ -26,7 +26,7 @@ const AccessibilityMenu = () => {
     text-white py-3.5 sm:py-4.5 px-2.5 sm:px-3.5 rounded-l-xl
     drop-shadow-xl cursor-pointer
     transition-all duration-300 ease-in-out
-    hover:pl-5 flex items-center justify-center
+    flex items-center justify-center
   `;
 
   // Menu panel styling - Width caps at w-80 starting at xs (440px)
