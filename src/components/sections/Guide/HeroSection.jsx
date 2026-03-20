@@ -11,7 +11,7 @@ const HeroSection = () => {
       className="relative bg-linear-to-tl from-[#2E5D9E] to-[#0F2FA2] transition-colors duration-200 drop-shadow-lg rounded-md overflow-hidden w-full"
     >
       {/* Responsive Background Blob */}
-      <div className="absolute -bottom-20 -right-20 xs:-bottom-32 xs:-right-32 md:-bottom-40 md:-right-40 lg:-bottom-70 lg:-right-90 w-72 h-72 xs:w-96 xs:h-96 md:w-120 md:h-120 lg:w-150 lg:h-110 bg-[#ffd000] rounded-full opacity-60 blur-2xl md:blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-70 -right-90 w-150 h-110 bg-[#ffd000] rounded-full opacity-60 blur-3xl"></div>
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col p-6 xs:p-8 md:p-10 lg:p-12 gap-4 xs:gap-5 md:gap-6 items-start justify-center">
