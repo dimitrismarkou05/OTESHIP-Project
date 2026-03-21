@@ -27,3 +27,6 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+#ignore php backend script
+send-email.php

@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const { t } = useTranslation("home");
@@ -12,14 +11,15 @@ const ContactForm = () => {
 
   useEffect(() => {
     if (showToast) {
-      const timer = setTimeout(() => setShowToast(false), 5000);
+      const timer = setTimeout(() => setShowToast(false), 4000);
       return () => clearTimeout(timer);
     }
   }, [showToast]);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
+    // Spam protection check
     if (e.target.elements.botcheck.value) {
       setToastType("success");
       setShowToast(true);
@@ -29,28 +29,41 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    // 1. Gather form data into a clean object
+    const formData = new FormData(form.current);
+    const data = Object.fromEntries(formData.entries());
 
-    emailjs
-      .sendForm(serviceID, templateID, form.current, {
-        publicKey: publicKey,
-      })
-      .then(
-        () => {
-          setIsSubmitting(false);
-          setToastType("success");
-          setShowToast(true);
-          form.current.reset();
+    // Remove the botcheck field from the payload
+    delete data.botcheck;
+
+    try {
+      // 2. Send the data to your Hostinger PHP script
+      const response = await fetch("https://oteship.eu/send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        (error) => {
-          setIsSubmitting(false);
-          setToastType("error");
-          setShowToast(true);
-          console.error("EmailJS Error:", error.text);
-        },
-      );
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      // 3. Handle the server's response
+      if (result.status === "success") {
+        setIsSubmitting(false);
+        setToastType("success");
+        setShowToast(true);
+        form.current.reset();
+      } else {
+        throw new Error(result.message || "Server returned an error");
+      }
+    } catch (error) {
+      setIsSubmitting(false);
+      setToastType("error");
+      setShowToast(true);
+      console.error("Fetch Error:", error);
+    }
   };
 
   return (
@@ -178,7 +191,6 @@ const ContactForm = () => {
         </button>
       </form>
 
-      {/* --- TOAST NOTIFICATION (LEFT ALIGNED) --- */}
       <div
         className={`no-scale fixed bottom-10 left-0 right-0 sm:right-auto sm:left-5 sm:bottom-5 z-9999 transition-all duration-500 transform px-4 sm:px-0 ${
           showToast
